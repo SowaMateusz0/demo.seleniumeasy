@@ -1,10 +1,10 @@
-package Tests.Basic;
+package Tests;
 
 import Assists.DifficultyOfExercises;
 import PageObject.HomePage;
-import Tests.BaseClass;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

@@ -1,7 +1,10 @@
 package Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -51,11 +54,15 @@ public class BaseClass {
 
     @AfterMethod
     public void tearDown(){
-       // driver.quit();
+        driver.quit();
     }
 
-    public void getScreenShotPath(){
-
+    public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        String destinationPath = "./screens/"+testCaseName+".png";
+        FileUtils.copyFile(source, new File(destinationPath));
+        return destinationPath;
     }
 
 

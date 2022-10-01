@@ -45,9 +45,10 @@ public class BaseClass {
             driver = new EdgeDriver();
         }
 
+        driver.get(properties.getProperty("url"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(properties.getProperty("url"));
+
         return driver;
     }
 
@@ -56,13 +57,8 @@ public class BaseClass {
        driver.quit();
     }
 
-    public String getScreenshotPath(String testCaseName,WebDriver driver) throws IOException {
+    public void getScreenShotPath() {
 
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        String destinationPath = System.getProperty("user.dir")+"\\screens\\"+testCaseName+".jpg";
-        FileUtils.copyFile(source, new File(destinationPath));
-        return destinationPath;
     }
 
 

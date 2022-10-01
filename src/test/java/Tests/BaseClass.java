@@ -54,11 +54,15 @@ public class BaseClass {
 
     @AfterMethod
     public void tearDown(){
-       driver.quit();
+        driver.quit();
     }
 
-    public void getScreenShotPath() {
-
+    public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        String destinationPath = "./screens/"+testCaseName+".png";
+        FileUtils.copyFile(source, new File(destinationPath));
+        return destinationPath;
     }
 
 

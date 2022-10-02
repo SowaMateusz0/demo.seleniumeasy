@@ -29,14 +29,11 @@ public class Listeners extends BaseClass implements ITestListener {
 
         test = extentReports.createTest(iTestResult.getMethod().getMethodName());
         threadLocal.set(test);
-        log.info("Test started");
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
-        threadLocal.get().log(Status.PASS,"Test Passed");
-        test.log(Status.PASS, MarkupHelper.createLabel(iTestResult.getName(), ExtentColor.GREEN));
+            log.info("Pass Test case is: " + iTestResult.getName(), Status.PASS);
     }
 
     @Override
@@ -55,7 +52,8 @@ public class Listeners extends BaseClass implements ITestListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        test.log(Status.FAIL, MarkupHelper.createLabel(iTestResult.getName(), ExtentColor.RED));
+        log.info("Fail Test case is : " +iTestResult.getName(), Status.FAIL);
+
     }
 
     @Override

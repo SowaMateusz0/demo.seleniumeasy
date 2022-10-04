@@ -56,14 +56,15 @@ public class CheckBoxDemoPage extends GenericsMethods {
         return optionsCheckboxes;
     }
 
-    public void clickOptionsCheckboxes() {
-        for (WebElement element: optionsCheckboxes) {
-            element.click();
-        }
+    public WebElement clickOptionsCheckbox(int index) {
+        return optionsCheckboxes.get(index);
     }
 
     public WebElement getCheckAllButton() {
         return checkAllButton;
+    }
+    public void clickCheckAllButton() {
+        checkAllButton.click();
     }
 
 }

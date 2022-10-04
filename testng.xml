@@ -6,16 +6,23 @@
         <listener class-name="Tests.Listeners"/>
     </listeners>
 
-    <test name="Test">
+    <test name="Test_00 - HomePageTests">
         <classes>
             <class name="Tests.HomePageTests"/>
         </classes>
     </test>
 
-    <test name="Test1">
+    <test name="Test_01 - SimpleFormDemoTest">
 
         <classes>
             <class name="Tests.Basic.SimpleFormDemoTest"/>
+        </classes>
+    </test>
+
+    <test name="Test_02 - CheckBoxDemoTest">
+
+        <classes>
+            <class name="Tests.Basic.CheckBoxDemoTest"/>
         </classes>
     </test>
 

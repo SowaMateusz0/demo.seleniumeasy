@@ -1,10 +1,9 @@
 package Tests;
 
-import Assists.DifficultyOfExercises;
+import Utility.DifficultyOfExercises;
 import PageObject.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

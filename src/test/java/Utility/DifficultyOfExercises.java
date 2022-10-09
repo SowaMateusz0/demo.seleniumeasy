@@ -1,4 +1,4 @@
-package Assists;
+package Utility;
 
 public enum DifficultyOfExercises {
 

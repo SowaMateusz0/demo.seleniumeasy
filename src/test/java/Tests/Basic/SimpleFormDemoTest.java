@@ -1,12 +1,13 @@
 package Tests.Basic;
 
-import Assists.DifficultyOfExercises;
+import Utility.DifficultyOfExercises;
 import PageObject.HomePage;
 import PageObject.SimpleFormDemoPage;
 import Tests.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
 
 import java.io.IOException;
 
@@ -15,28 +16,28 @@ public class SimpleFormDemoTest extends BaseClass {
     public WebDriver driver;
 
     @BeforeMethod
-    public void initialize() throws IOException{
+    public void initialize() throws IOException {
         driver = setup();
     }
 
     @Test
-    public void singleInputField(){
+    public void singleInputField() {
 
-        final String message= "Hello";
+        final String message = "Hello";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 0);
         SimpleFormDemoPage simpleFormDemoPage = new SimpleFormDemoPage(driver);
 
         simpleFormDemoPage.setEnterMessageBox(message);
         simpleFormDemoPage.clickShowMessageButton();
 
-        Assert.assertEquals(simpleFormDemoPage.getMessage(),message);
+        Assert.assertEquals(simpleFormDemoPage.getMessage(), message);
     }
 
 
-    @Test(dataProvider = "getData")
-    public void twoInputFields(String number1,String number2,String sum) {
+    @Test(dataProvider = "getDataSimpleFormDemo")
+    public void twoInputFields(String number1, String number2, String sum) {
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 0);
@@ -45,25 +46,28 @@ public class SimpleFormDemoTest extends BaseClass {
         simpleFormDemoPage.enterFirstNumber(number1);
         simpleFormDemoPage.enterSecondNumber(number2);
         simpleFormDemoPage.clickGetTotalButton();
-        Assert.assertEquals(simpleFormDemoPage.getValue(),sum);
+        Assert.assertEquals(simpleFormDemoPage.getValue(), sum);
     }
 
     @DataProvider
-    public Object[][] getData(){
+    public Object[][] getDataSimpleFormDemo() {
 
-        Object[][] data = new Object[3][3];
-        data[0][0] = "1";
-        data[0][1] = "2";
-        data[0][2] = "3";
+      Object[][] data = new Object[3][3];
+       data[0][0] = "1";
+       data[0][1] = "2";
+       data[0][2] = "3";
 
-        data[1][0] = "a";
-        data[1][1] = "b";
-        data[1][2] = "Na";
+       data[1][0] = "a";
+       data[1][1] = "b";
+       data[1][2] = "Na";
 
-        data[2][0] = "";
-        data[2][1] = "";
-        data[2][2] = "NaN";
+       data[2][0] = "";
+       data[2][1] = "";
+       data[2][2] = "NaN";
 
-        return data;
+       return data;
+
     }
+
+
 }

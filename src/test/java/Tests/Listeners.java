@@ -1,6 +1,6 @@
 package Tests;
 
-import Assists.ExtentReporter;
+import Utility.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;

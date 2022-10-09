@@ -1,12 +1,11 @@
 package Tests.Basic;
 
-import Assists.DifficultyOfExercises;
+import Utility.DifficultyOfExercises;
 import PageObject.CheckBoxDemoPage;
 import PageObject.HomePage;
-import PageObject.SimpleFormDemoPage;
 import Tests.BaseClass;
-import Tests.HomePageTests;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -43,11 +42,11 @@ public class CheckBoxDemoTest extends BaseClass {
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
         CheckBoxDemoPage checkBoxDemoPage = new CheckBoxDemoPage(driver);
 
+
         for (int i = 0; i < checkBoxDemoPage.getOptionsCheckboxes().size(); i++) {
             checkBoxDemoPage.clickOptionsCheckbox(i).click();
             Assert.assertTrue(checkBoxDemoPage.clickOptionsCheckbox(i).isSelected());
         }
-
     }
 
     @Test

@@ -2,7 +2,11 @@ package Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,11 +15,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
+import java.io.*;
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.Properties;
 
 public class BaseClass {
@@ -56,6 +59,45 @@ public class BaseClass {
     public void tearDown(){
         driver.quit();
     }
+
+//    public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException, ParseException {
+//
+//        JSONParser jsonParser = new JSONParser();
+//
+//        FileReader reader = new FileReader(System.getProperty("user.dir")+"src/test/java/Utility/SumTwoNumbers.json");
+//        Object obj = jsonParser.parse(reader);
+//        JSONObject empjsonobj = (JSONObject) obj;
+//
+//        String fname = (String) empjsonobj.get("numberOne");
+//        String lname = (String) empjsonobj.get("numberTwo");
+//
+//        JSONArray array = (JSONArray) empjsonobj.get("numbers");
+//
+//        for (int i = 0; i<array.size(); i++) {
+//            JSONObject address = (JSONObject) array.get(i);
+//
+//            String street = (String) address.get("numberOne");
+//            String city = (String) address.get("numberTwo");
+//            String state = (String) address.get("sum");
+//
+//            System.out.println(i);
+//            System.out.println(street);
+//            System.out.println(city);
+//            System.out.println(state);
+//        }
+//
+////        String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+////        ObjectMapper objectMapper = new ObjectMapper();
+////        return objectMapper.readValue(jsonContent, new TypeReference<>() {
+////        });
+//    }
+
+
+
+
+
+
+
 
     public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;

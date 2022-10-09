@@ -26,4 +26,11 @@
         </classes>
     </test>
 
+    <test name="Test_03 - RadioButtonsDemoTest">
+
+        <classes>
+            <class name="Tests.Basic.RadioButtonsDemoTest"/>
+        </classes>
+    </test>
+
 </suite>

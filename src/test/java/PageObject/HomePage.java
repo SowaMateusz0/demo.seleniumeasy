@@ -1,7 +1,7 @@
 package PageObject;
 
-import Assists.DifficultyOfExercises;
-import Assists.GenericsMethods;
+import Utility.DifficultyOfExercises;
+import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

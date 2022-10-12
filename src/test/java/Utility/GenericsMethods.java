@@ -1,17 +1,13 @@
 package Utility;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import test.v6.A;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GenericsMethods {
@@ -44,19 +40,14 @@ public class GenericsMethods {
         }
     }
 
-    public void multiSelectDropDown(WebElement element, List<String> list){
-
-        Select select = new Select(element);
-        List<WebElement> options = select.getOptions();
-
-        for (String s : list) {
-            for (WebElement el : options) {
-                if (el.getText().equalsIgnoreCase(s)) {
-                    select.selectByVisibleText(s);
-                    break;
-                }
-            }
-        }
+    public void acceptAlert(WebDriver driver){
+        driver.switchTo().alert().accept();
     }
+
+    public String getAlertText(WebDriver driver){
+       return driver.switchTo().alert().getText();
+    }
+
+
     
 }

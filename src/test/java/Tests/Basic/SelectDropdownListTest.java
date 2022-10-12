@@ -52,7 +52,7 @@ public class SelectDropdownListTest extends BaseClass {
 
         actions.keyDown(Keys.CONTROL).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(firstElementIndex)).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(secondElementIndex)).build().perform();
         selectDropdownListPage.getGetAllSelectedButton().click();
-        Assert.assertEquals("Options selected are : "+ selectDropdownListPage.getIndexOfElementFromMultiSelectList(firstElementIndex).getText() +"," +selectDropdownListPage.getIndexOfElementFromMultiSelectList(secondElementIndex).getText(),selectDropdownListPage.getGetTextFromMultiSelect());
+        Assert.assertEquals(selectDropdownListPage.getGetTextFromMultiSelect(),"Options selected are : "+ selectDropdownListPage.getIndexOfElementFromMultiSelectList(firstElementIndex).getText() +"," +selectDropdownListPage.getIndexOfElementFromMultiSelectList(secondElementIndex).getText());
 
     }
 

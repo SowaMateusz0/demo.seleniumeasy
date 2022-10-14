@@ -8,7 +8,10 @@ import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class GenericsMethods {
 
@@ -40,14 +43,9 @@ public class GenericsMethods {
         }
     }
 
-    public void acceptAlert(WebDriver driver){
-        driver.switchTo().alert().accept();
-    }
-
     public String getAlertText(WebDriver driver){
        return driver.switchTo().alert().getText();
     }
 
 
-    
 }

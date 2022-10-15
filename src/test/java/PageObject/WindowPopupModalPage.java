@@ -48,8 +48,4 @@ public class WindowPopupModalPage {
     public void clickFollowTwitterAndFacebook(){
         followTwitterAndFacebook.click();
     }
-
-    public void clickFollowAll(){
-        followAll.click();
-    }
 }

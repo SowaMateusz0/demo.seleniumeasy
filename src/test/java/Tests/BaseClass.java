@@ -55,10 +55,10 @@ public class BaseClass {
         return driver;
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
 //    public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException, ParseException {
 //

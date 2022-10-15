@@ -78,16 +78,8 @@ public class RadioButtonsDemoPage extends GenericsMethods {
         return genderRadioButton.get(index);
     }
 
-    public List<WebElement> getGenderRadioButton() {
-        return genderRadioButton;
-    }
-
     public WebElement getAgeGroupRadioButtons(int index){
         return ageGroupRadioButton.get(index);
-    }
-
-    public List<WebElement> getAgeGroupRadioButtons(){
-        return ageGroupRadioButton;
     }
 
     public WebElement getGetValuesButton() {

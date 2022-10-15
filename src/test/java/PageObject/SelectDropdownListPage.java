@@ -65,10 +65,6 @@ public class SelectDropdownListPage extends GenericsMethods {
         selectDropDown(element,visibleText);
     }
 
-    public WebElement getMultiSelectDropDown(){
-        return ListOfMultiSelectDropDown;
-    }
-
     public WebElement getGetAllSelectedButton() {
         return getAllSelectedButton;
     }

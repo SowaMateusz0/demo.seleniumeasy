@@ -47,5 +47,10 @@ public class GenericsMethods {
        return driver.switchTo().alert().getText();
     }
 
+    public void waitForInvisibilityOfElement(WebDriver driver, WebElement element, int duration){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(duration));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
 
 }

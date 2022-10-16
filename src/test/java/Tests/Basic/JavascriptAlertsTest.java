@@ -1,7 +1,7 @@
 package Tests.Basic;
 
-import PageObject.HomePage;
-import PageObject.JavascriptAlertsPage;
+import PageObjectBasic.HomePage;
+import PageObjectBasic.JavascriptAlertsPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.WebDriver;

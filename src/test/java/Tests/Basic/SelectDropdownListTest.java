@@ -1,22 +1,18 @@
 package Tests.Basic;
 
-import PageObject.HomePage;
-import PageObject.SelectDropdownListPage;
+import PageObjectBasic.HomePage;
+import PageObjectBasic.SelectDropdownListPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import test.v6.A;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SelectDropdownListTest extends BaseClass {
 

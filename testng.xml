@@ -15,49 +15,49 @@
     <test name="Test_01 - SimpleFormDemoTest">
 
         <classes>
-            <class name="Tests.Basic.SimpleFormDemoTest"/>
+            <class name="Tests.PageObject.Basic.SimpleFormDemoTest"/>
         </classes>
     </test>
 
     <test name="Test_02 - CheckBoxDemoTest">
 
         <classes>
-            <class name="Tests.Basic.CheckBoxDemoTest"/>
+            <class name="Tests.PageObject.Basic.CheckBoxDemoTest"/>
         </classes>
     </test>
 
     <test name="Test_03 - RadioButtonsDemoTest">
 
         <classes>
-            <class name="Tests.Basic.RadioButtonsDemoTest"/>
+            <class name="Tests.PageObject.Basic.RadioButtonsDemoTest"/>
         </classes>
     </test>
 
     <test name="Test_04 - SelectDropdownListTest">
 
         <classes>
-            <class name="Tests.Basic.SelectDropdownListTest"/>
+            <class name="Tests.PageObject.Basic.SelectDropdownListTest"/>
         </classes>
     </test>
 
     <test name="Test_05 - JavascriptAlerts">
 
         <classes>
-            <class name="Tests.Basic.JavascriptAlertsTest"/>
+            <class name="Tests.PageObject.Basic.JavascriptAlertsTest"/>
         </classes>
     </test>
 
     <test name="Test_06 - WindowPopupModal">
 
         <classes>
-            <class name="Tests.Basic.WindowPopupModalTest"/>
+            <class name="Tests.PageObject.Basic.WindowPopupModalTest"/>
         </classes>
     </test>
 
     <test name="Test_07 - BootstrapAlerts">
 
         <classes>
-            <class name="Tests.Basic.BootStrapAlertsTest"/>
+            <class name="Tests.PageObject.Basic.BootStrapAlertsTest"/>
         </classes>
     </test>
 

@@ -1,7 +1,7 @@
 package Tests.Basic;
 
-import PageObject.HomePage;
-import PageObject.WindowPopupModalPage;
+import PageObjectBasic.HomePage;
+import PageObjectBasic.WindowPopupModalPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.WebDriver;

@@ -1,8 +1,8 @@
 package Tests.Basic;
 
 import Utility.DifficultyOfExercises;
-import PageObject.HomePage;
-import PageObject.SimpleFormDemoPage;
+import PageObjectBasic.HomePage;
+import PageObjectBasic.SimpleFormDemoPage;
 import Tests.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

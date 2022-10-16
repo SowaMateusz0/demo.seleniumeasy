@@ -1,23 +1,19 @@
 package Tests.Basic;
 
-import PageObject.BootStrapAlertsPage;
-import PageObject.HomePage;
+import PageObjectBasic.BootStrapAlertsPage;
+import PageObjectBasic.HomePage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 

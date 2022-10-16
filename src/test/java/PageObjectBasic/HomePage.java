@@ -1,4 +1,4 @@
-package PageObject;
+package PageObjectBasic;
 
 import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;

@@ -1,12 +1,10 @@
 package Tests.Basic;
 
 import Utility.DifficultyOfExercises;
-import PageObject.HomePage;
-import PageObject.RadioButtonsDemoPage;
+import PageObjectBasic.HomePage;
+import PageObjectBasic.RadioButtonsDemoPage;
 import Tests.BaseClass;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.poi.ss.formula.functions.Na;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;

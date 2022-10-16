@@ -1,7 +1,7 @@
 package Tests;
 
 import Utility.DifficultyOfExercises;
-import PageObject.HomePage;
+import PageObjectBasic.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

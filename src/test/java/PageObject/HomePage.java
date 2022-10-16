@@ -4,6 +4,7 @@ import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,22 +21,28 @@ public class HomePage extends GenericsMethods {
     }
 
     @FindBy(xpath = "//span[@class='round-tabs two']")
-    WebElement basicBtn;
+    @CacheLookup
+    private WebElement basicBtn;
 
     @FindBy(xpath = "//span[@class='round-tabs three']")
-    WebElement intermediateBtn;
+    @CacheLookup
+    private WebElement intermediateBtn;
 
     @FindBy(xpath = "//span[@class='round-tabs four']")
-    WebElement advancedBtn;
+    @CacheLookup
+    private WebElement advancedBtn;
 
     @FindBy(xpath = "//div[@id='basic']//a[@class='list-group-item']")
-    List<WebElement> listOfBasicExercises;
+    @CacheLookup
+    private List<WebElement> listOfBasicExercises;
 
     @FindBy(xpath = "//div[@id='basic']//a[@class='list-group-item']")
-    List<WebElement> listOfIntermediateExercises;
+    @CacheLookup
+    private List<WebElement> listOfIntermediateExercises;
 
     @FindBy(xpath = "//div[@id='basic']//a[@class='list-group-item']")
-    List<WebElement> listOfAdvanceExercises;
+    @CacheLookup
+    private List<WebElement> listOfAdvanceExercises;
 
     public void goToExercisesWebsite(DifficultyOfExercises difficultyOfExercises, int indexOfExample){
 

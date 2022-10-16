@@ -2,6 +2,7 @@ package PageObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -19,16 +20,20 @@ public class BootStrapAlertsPage {
     //*************Bootstrap Alert messages*************
 
     @FindBy(xpath = "//button[contains(@id,'normal')]")
-    List<WebElement> normalMessages;
+    @CacheLookup
+    private List<WebElement> normalMessages;
 
     @FindBy(xpath = "//button[contains(@id,'autoclosable')]")
-    List<WebElement> autocloseableMessages;
+    @CacheLookup
+    private List<WebElement> autocloseableMessages;
 
     @FindBy(xpath = "//div[contains(@class,'alert-normal')]")
-    List<WebElement> normalAlertsMessage;
+    @CacheLookup
+    private List<WebElement> normalAlertsMessage;
 
     @FindBy(xpath = "//div[contains(@class,'alert-autocloseable')]")
-    List<WebElement> autocloseableAlertsMessage;
+    @CacheLookup
+    private List<WebElement> autocloseableAlertsMessage;
 
     public List<WebElement> getNormalAlertsMessage() {
         return normalAlertsMessage;

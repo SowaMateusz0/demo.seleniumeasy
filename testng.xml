@@ -33,4 +33,32 @@
         </classes>
     </test>
 
+    <test name="Test_04 - SelectDropdownListTest">
+
+        <classes>
+            <class name="Tests.Basic.SelectDropdownListTest"/>
+        </classes>
+    </test>
+
+    <test name="Test_05 - JavascriptAlerts">
+
+        <classes>
+            <class name="Tests.Basic.JavascriptAlertsTest"/>
+        </classes>
+    </test>
+
+    <test name="Test_06 - WindowPopupModal">
+
+        <classes>
+            <class name="Tests.Basic.WindowPopupModalTest"/>
+        </classes>
+    </test>
+
+    <test name="Test_07 - BootstrapAlerts">
+
+        <classes>
+            <class name="Tests.Basic.BootStrapAlertsTest"/>
+        </classes>
+    </test>
+
 </suite>

@@ -1,4 +1,4 @@
-package PageObjectBasic;
+package PageObject.Basic;
 
 import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package PageObjectBasic;
+package PageObject.Basic;
 
 import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;
@@ -36,13 +36,13 @@ public class HomePage extends GenericsMethods {
     @CacheLookup
     private List<WebElement> listOfBasicExercises;
 
-    @FindBy(xpath = "//div[@id='basic']//a[@class='list-group-item']")
+    @FindBy(xpath = "//div[@id='intermediate']//a[@class='list-group-item']")
     @CacheLookup
     private List<WebElement> listOfIntermediateExercises;
 
-    @FindBy(xpath = "//div[@id='basic']//a[@class='list-group-item']")
+    @FindBy(xpath = "//div[@id='advanced']//a[@class='list-group-item']")
     @CacheLookup
-    private List<WebElement> listOfAdvanceExercises;
+    private List<WebElement> listOfAdvancedExercises;
 
     public void goToExercisesWebsite(DifficultyOfExercises difficultyOfExercises, int indexOfExample){
 
@@ -60,7 +60,7 @@ public class HomePage extends GenericsMethods {
                 case ADVANCED -> {
                     waitForElementToBeVisible(advancedBtn);
                     advancedBtn.click();
-                    listOfAdvanceExercises.get(indexOfExample).click();
+                    listOfAdvancedExercises.get(indexOfExample).click();
                 }
             }
         }

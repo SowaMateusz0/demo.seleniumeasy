@@ -1,9 +1,11 @@
 package Tests;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -13,12 +15,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
 
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 public class BaseClass {
@@ -55,46 +59,45 @@ public class BaseClass {
         return driver;
     }
 
+
 //    @AfterMethod
 //    public void tearDown(){
 //        driver.quit();
 //    }
 
-//    public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException, ParseException {
-//
-//        JSONParser jsonParser = new JSONParser();
-//
-//        FileReader reader = new FileReader(System.getProperty("user.dir")+"src/test/java/Utility/SumTwoNumbers.json");
-//        Object obj = jsonParser.parse(reader);
-//        JSONObject empjsonobj = (JSONObject) obj;
-//
-//        String fname = (String) empjsonobj.get("numberOne");
-//        String lname = (String) empjsonobj.get("numberTwo");
-//
-//        JSONArray array = (JSONArray) empjsonobj.get("numbers");
-//
-//        for (int i = 0; i<array.size(); i++) {
-//            JSONObject address = (JSONObject) array.get(i);
-//
-//            String street = (String) address.get("numberOne");
-//            String city = (String) address.get("numberTwo");
-//            String state = (String) address.get("sum");
-//
-//            System.out.println(i);
-//            System.out.println(street);
-//            System.out.println(city);
-//            System.out.println(state);
-//        }
-//
-////        String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
-////        ObjectMapper objectMapper = new ObjectMapper();
-////        return objectMapper.readValue(jsonContent, new TypeReference<>() {
-////        });
-//    }
+
+    public Object[][] testData(String path,int sheetIndex) throws IOException {
+
+        FileInputStream fis = new FileInputStream(path);
+        XSSFWorkbook workbook = new XSSFWorkbook(fis);
+        XSSFSheet sheet = workbook.getSheetAt(sheetIndex);
+
+        DataFormatter formatter = new DataFormatter();
+
+        int rowCount = sheet.getPhysicalNumberOfRows();
+        XSSFRow row = sheet.getRow(0);
+        int columnCount = row.getLastCellNum();
+
+        Object[][] data= new Object[rowCount-1][columnCount];
+
+        for (int i = 0; i < rowCount-1 ; i++) {
+            row = sheet.getRow(i+1);
+            for (int j = 0; j < columnCount ; j++) {
+                XSSFCell cell = row.getCell(j);
+                data[i][j] = formatter.formatCellValue(cell);
+            }
+        }
+        return data;
+    }
 
 
 
-
+    public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException {
+        String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(jsonContent, new TypeReference<>() {
+        });
+    }
 
 
 

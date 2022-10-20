@@ -1,8 +1,8 @@
 package Tests.Basic;
 
 import Utility.DifficultyOfExercises;
-import PageObjectBasic.HomePage;
-import PageObjectBasic.SimpleFormDemoPage;
+import PageObject.Basic.HomePage;
+import PageObject.Basic.SimpleFormDemoPage;
 import Tests.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 
 
 import java.io.IOException;
+
 
 public class SimpleFormDemoTest extends BaseClass {
 
@@ -37,7 +38,7 @@ public class SimpleFormDemoTest extends BaseClass {
 
 
     @Test(dataProvider = "getDataSimpleFormDemo")
-    public void twoInputFields(String number1, String number2, String sum) {
+    public void twoInputFields(String number1, String number2, String sum){
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 0);
@@ -50,23 +51,10 @@ public class SimpleFormDemoTest extends BaseClass {
     }
 
     @DataProvider
-    public Object[][] getDataSimpleFormDemo() {
+    public Object[][] getDataSimpleFormDemo() throws IOException {
 
-      Object[][] data = new Object[3][3];
-       data[0][0] = "1";
-       data[0][1] = "2";
-       data[0][2] = "3";
-
-       data[1][0] = "a";
-       data[1][1] = "b";
-       data[1][2] = "Na";
-
-       data[2][0] = "";
-       data[2][1] = "";
-       data[2][2] = "NaN";
-
-       return data;
-
+        String path = System.getProperty("user.dir") + "\\excelData\\SimpleFormDemoDataProvider.xlsx";
+        return testData(path,0);
     }
 
 

@@ -1,8 +1,8 @@
 package Tests.Basic;
 
 import Utility.DifficultyOfExercises;
-import PageObjectBasic.CheckBoxDemoPage;
-import PageObjectBasic.HomePage;
+import PageObject.Basic.CheckBoxDemoPage;
+import PageObject.Basic.HomePage;
 import Tests.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

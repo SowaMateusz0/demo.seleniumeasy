@@ -1,7 +1,7 @@
 package Tests.Basic;
 
-import PageObjectBasic.BootStrapAlertsPage;
-import PageObjectBasic.HomePage;
+import PageObject.Basic.BootStrapAlertsPage;
+import PageObject.Basic.HomePage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;
@@ -106,29 +106,9 @@ public class BootStrapAlertsTest extends BaseClass {
     }
 
     @DataProvider
-    public Object[][] getData(){
+    public Object[][] getData() throws IOException {
 
-        Object[][] data = new Object[4][3];
-
-        data[0][0] = "success";
-        data[0][1] = "#dff0d8";
-        data[0][2] = "#3c763d";
-
-        data[1][0] = "warning";
-        data[1][1] = "#fcf8e3";
-        data[1][2] = "#8a6d3b";
-
-        data[2][0] = "danger";
-        data[2][1] = "#f2dede";
-        data[2][2] = "#a94442";
-
-        data[3][0] = "info";
-        data[3][1] = "#d9edf7";
-        data[3][2] = "#31708f";
-
-        return data;
+        String path = System.getProperty("user.dir") + "\\excelData\\BootStrapAlertsDataProvider.xlsx";
+        return testData(path, 0);
     }
-
-
-
 }

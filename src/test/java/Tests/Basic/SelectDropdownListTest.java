@@ -1,7 +1,7 @@
 package Tests.Basic;
 
-import PageObjectBasic.HomePage;
-import PageObjectBasic.SelectDropdownListPage;
+import PageObject.Basic.HomePage;
+import PageObject.Basic.SelectDropdownListPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.Keys;
@@ -54,29 +54,10 @@ public class SelectDropdownListTest extends BaseClass {
 
 
     @DataProvider()
-    public Object[][] getDataSelectDropdownSingleList(){
+    public Object[][] getDataSelectDropdownSingleList() throws IOException {
 
-        Object[][] data = new Object[6][2];
-
-        data[0][0] = "Sunday";
-        data[0][1] = "Day selected :- Sunday";
-
-        data[1][0] = "Monday";
-        data[1][1] = "Day selected :- Monday";
-
-        data[2][0] = "Tuesday";
-        data[2][1] = "Day selected :- Tuesday";
-
-        data[3][0] = "Thursday";
-        data[3][1] = "Day selected :- Thursday";
-
-        data[4][0] = "Friday";
-        data[4][1] = "Day selected :- Friday";
-
-        data[5][0] = "Saturday";
-        data[5][1] = "Day selected :- Saturday";
-
-        return data;
+        String path = System.getProperty("user.dir") + "\\excelData\\SelectDropdownList.xlsx";
+        return testData(path,0);
     }
 
 

@@ -1,8 +1,8 @@
 package Tests.Basic;
 
 import Utility.DifficultyOfExercises;
-import PageObjectBasic.HomePage;
-import PageObjectBasic.RadioButtonsDemoPage;
+import PageObject.Basic.HomePage;
+import PageObject.Basic.RadioButtonsDemoPage;
 import Tests.BaseClass;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.Assert;
@@ -62,16 +62,15 @@ public class RadioButtonsDemoTest extends BaseClass {
     }
 
     @Test(dataProvider = "getDataRadioButtonsDemo")
-    public void ValidateTextAfterCheckRadioButtons(String gender,String age,int genderIndex,int ageIndex){
+    public void ValidateTextAfterCheckRadioButtons(String gender,String age,String genderIndex,String ageIndex){
 
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
-
-        radioButtonsDemoPage.getGenderRadioButton(genderIndex).click();
-        radioButtonsDemoPage.getAgeGroupRadioButtons(ageIndex).click();
+        radioButtonsDemoPage.getGenderRadioButton(Integer.parseInt(genderIndex)).click();
+        radioButtonsDemoPage.getAgeGroupRadioButtons(Integer.parseInt(ageIndex)).click();
         radioButtonsDemoPage.getGetValuesButton().click();
         Assert.assertEquals(radioButtonsDemoPage.getGroupTextValue(),"Sex : " + gender + "\nAge group: " + age);
 
@@ -79,40 +78,10 @@ public class RadioButtonsDemoTest extends BaseClass {
 
 
     @DataProvider
-    public Object[][] getDataRadioButtonsDemo() {
+    public Object[][] getDataRadioButtonsDemo() throws IOException {
 
-        Object[][] data = new Object[6][4];
-        data[0][0] = "Male";
-        data[0][1] = "0 - 5";
-        data[0][2] = 0; //  gender index on List
-        data[0][3] = 0; // age index on List
-
-        data[1][0] = "Male";
-        data[1][1] = "5 - 15";
-        data[1][2] = 0;
-        data[1][3] = 1;
-
-        data[2][0] = "Male";
-        data[2][1] = "15 - 50";
-        data[2][2] = 0;
-        data[2][3] = 2;
-
-        data[3][0] = "Female";
-        data[3][1] = "0 - 5";
-        data[3][2] = 1;
-        data[3][3] = 0;
-
-        data[4][0] = "Female";
-        data[4][1] = "5 - 15";
-        data[4][2] = 1;
-        data[4][3] = 1;
-
-        data[5][0] = "Female";
-        data[5][1] = "15 - 50";
-        data[5][2] = 1;
-        data[5][3] = 2;
-
-        return data;
+        String path = System.getProperty("user.dir") + "\\excelData\\RadioButtonsDemo.xlsx";
+        return testData(path,0);
 
     }
 

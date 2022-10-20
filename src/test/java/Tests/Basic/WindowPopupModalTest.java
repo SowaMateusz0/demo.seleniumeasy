@@ -1,7 +1,7 @@
 package Tests.Basic;
 
-import PageObjectBasic.HomePage;
-import PageObjectBasic.WindowPopupModalPage;
+import PageObject.Basic.HomePage;
+import PageObject.Basic.WindowPopupModalPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.WebDriver;
@@ -85,25 +85,10 @@ public class WindowPopupModalTest extends BaseClass {
 
 
     @DataProvider
-    public Object[][] getDataSingle(){
+    public Object[][] getDataSingle() throws IOException {
 
-        Object[][] data = new Object[3][3];
-
-        data[0][0] = "Follow on Twitter";
-        data[0][1] = "https://twitter.com/intent/follow?screen_name=seleniumeasy";
-        data[0][2] = null;
-
-        data[1][0] = "Like us On Facebook";
-        data[1][1] = "https://www.facebook.com/seleniumeasy";
-        data[1][2] = null;
-
-        data[2][0] = "Follow Twitter & Facebook";
-        data[2][1] = "https://www.facebook.com/seleniumeasy";
-        data[2][2] = "https://twitter.com/intent/follow?screen_name=seleniumeasy";
-
-
-
-        return data;
+        String path = System.getProperty("user.dir") + "\\excelData\\WindowPopupModalDataProvider.xlsx";
+        return testData(path, 0);
     }
 
 }

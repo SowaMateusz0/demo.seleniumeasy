@@ -60,10 +60,10 @@ public class BaseClass {
     }
 
 
-//    @AfterMethod
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
+    }
 
 
     public Object[][] testData(String path,int sheetIndex) throws IOException {

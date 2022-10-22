@@ -18,25 +18,29 @@ public class AjaxFormSubmitPage extends GenericsMethods {
         PageFactory.initElements(driver,this);
     }
 
+    //*************Ajax Form*************
+
     @FindBy(id = "title")
     @CacheLookup
-    WebElement nameField;
+    private WebElement nameField;
 
     @FindBy(id = "description")
     @CacheLookup
-    WebElement commentField;
+    private WebElement commentField;
 
     @FindBy(id = "btn-submit")
     @CacheLookup
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(id = "submit-control")
     @CacheLookup
-    WebElement message;
+    private WebElement message;
 
     @FindBy(xpath = "//img[@src='\"LoaderIcon.gif\"']")
     @CacheLookup
-    WebElement icon;
+    private WebElement icon;
+
+    //*************Ajax Form*************
 
     public String getNameField() {
         return nameField.getAttribute("style");

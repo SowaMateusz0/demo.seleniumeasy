@@ -116,14 +116,63 @@ public class InputFormWithValidationsPage extends GenericsMethods {
     @CacheLookup
     private WebElement descriptionText;
 
+    //*************Error Messages*************
+
     @FindBy(xpath = "//small[@data-bv-result='INVALID']")
     @CacheLookup
     private List<WebElement> errorMessages;
 
-    //*************Error Messages*************
 
-    public List<WebElement> getErrorMessages(){
-        return errorMessages;
+
+
+    //*************Fields*************
+
+    public void enterFirstName(String text){
+        firstNameField.sendKeys(text);
+    }
+
+    public void enterLastName(String text){
+        lastNameField.sendKeys(text);
+    }
+
+    public void enterEmail(String text){
+        emailField.sendKeys(text);
+    }
+
+    public void enterPhone(String text){
+        phoneField.sendKeys(text);
+    }
+
+    public void enterAddress(String text){
+        addressField.sendKeys(text);
+    }
+
+    public void enterCity(String text){
+        cityField.sendKeys(text);
+    }
+
+    public void chooseState(WebElement state, String stateName){
+        selectDropDown(state, stateName);
+    }
+
+    public WebElement getState(){
+        return state;
+    }
+
+    public void enterZipCode(String text){
+        zip.sendKeys(text);
+    }
+
+    public void enterWebsite(String text){
+        website.sendKeys(text);
+    }
+
+    public void doYouWantHaveHostingRadioBox(int index){
+        radioBox.get(index).click();
+    }
+
+    public void enterComment(String text){
+        comment.sendKeys(text);
     }
 
     //*************Text*************
@@ -175,58 +224,11 @@ public class InputFormWithValidationsPage extends GenericsMethods {
     public List<WebElement> getRadioBox(){
         return radioBox;
     }
-    //*************Fields*************
 
-    public void enterFirstName(String text){
-        firstNameField.sendKeys(text);
-    }
+    //*************Error Messages*************
 
-    public void enterLastName(String text){
-        lastNameField.sendKeys(text);
-    }
-
-    public void enterEmail(String text){
-        emailField.sendKeys(text);
-    }
-
-    public void enterPhone(String text){
-        phoneField.sendKeys(text);
-    }
-
-    public void enterAddress(String text){
-        addressField.sendKeys(text);
-    }
-
-    public void enterCity(String text){
-        cityField.sendKeys(text);
-    }
-
-    public void chooseState(WebElement state, String stateName){
-        selectDropDown(state, stateName);
-    }
-
-    public WebElement getState(){
-        return state;
-    }
-
-    public void enterZipCode(String text){
-        zip.sendKeys(text);
-    }
-
-    public void enterWebsite(String text){
-        website.sendKeys(text);
-    }
-
-    public void doYouWantHaveHostingRadioBox(int index){
-        radioBox.get(index).click();
-    }
-
-    public void enterComment(String text){
-        comment.sendKeys(text);
-    }
-
-    public void clickSendButton(){
-        sendButton.click();
+    public List<WebElement> getErrorMessages(){
+        return errorMessages;
     }
 
 }

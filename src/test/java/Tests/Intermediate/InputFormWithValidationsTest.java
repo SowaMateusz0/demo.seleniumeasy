@@ -125,7 +125,7 @@ public class InputFormWithValidationsTest extends BaseClass {
 
         List<String> expectedTextColorAsHex = new ArrayList<>();
 
-        String failureTextColor = "#a94442";
+        final String failureTextColor = "#a94442";
 
         for (int i = 0; i < textColorAsHex.size(); i++) {
             expectedTextColorAsHex.add(failureTextColor);

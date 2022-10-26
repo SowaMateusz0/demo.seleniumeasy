@@ -87,7 +87,7 @@ public class WindowPopupModalTest extends BaseClass {
     @DataProvider
     public Object[][] getDataSingle() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\WindowPopupModalDataProvider.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\WindowPopupModalDataProvider.xlsx";
         return testData(path, 0);
     }
 

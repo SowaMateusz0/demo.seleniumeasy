@@ -67,7 +67,7 @@ public class JQuerySelectDropdownTest extends BaseClass {
     @Test
     public void ValidateDropdownWithDisabledValues(){
 
-        String expected = "Puerto Rico";
+        final String expected = "Puerto Rico";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);
@@ -81,7 +81,7 @@ public class JQuerySelectDropdownTest extends BaseClass {
     @Test
     public void ValidateDropdownWithCategory(){
 
-        String expected = "Java";
+        final String expected = "Java";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);

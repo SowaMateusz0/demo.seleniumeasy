@@ -53,7 +53,7 @@ public class SimpleFormDemoTest extends BaseClass {
     @DataProvider
     public Object[][] getDataSimpleFormDemo() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\SimpleFormDemoDataProvider.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\SimpleFormDemoDataProvider.xlsx";
         return testData(path,0);
     }
 

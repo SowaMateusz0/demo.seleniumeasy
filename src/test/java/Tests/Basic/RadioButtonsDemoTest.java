@@ -80,7 +80,7 @@ public class RadioButtonsDemoTest extends BaseClass {
     @DataProvider
     public Object[][] getDataRadioButtonsDemo() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\RadioButtonsDemo.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\RadioButtonsDemo.xlsx";
         return testData(path,0);
 
     }

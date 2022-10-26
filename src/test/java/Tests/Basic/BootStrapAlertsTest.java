@@ -108,7 +108,7 @@ public class BootStrapAlertsTest extends BaseClass {
     @DataProvider
     public Object[][] getData() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\BootStrapAlertsDataProvider.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\BootStrapAlertsDataProvider.xlsx";
         return testData(path, 0);
     }
 }

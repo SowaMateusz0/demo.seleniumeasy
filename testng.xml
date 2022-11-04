@@ -6,59 +6,16 @@
         <listener class-name="Tests.Listeners"/>
     </listeners>
 
-    <test name="Test_00 - HomePageTests">
-        <classes>
-            <class name="Tests.HomePageTests"/>
-        </classes>
+    <test name="Basic Tests">
+        <packages>
+            <package name="Tests.Basic"/>
+        </packages>
+
     </test>
-
-    <test name="Test_01 - SimpleFormDemoTest">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.SimpleFormDemoTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_02 - CheckBoxDemoTest">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.CheckBoxDemoTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_03 - RadioButtonsDemoTest">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.RadioButtonsDemoTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_04 - SelectDropdownListTest">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.SelectDropdownListTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_05 - JavascriptAlerts">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.JavascriptAlertsTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_06 - WindowPopupModal">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.WindowPopupModalTest"/>
-        </classes>
-    </test>
-
-    <test name="Test_07 - BootstrapAlerts">
-
-        <classes>
-            <class name="Tests.PageObject.Basic.BootStrapAlertsTest"/>
-        </classes>
+    <test name="Intermediate Tests">
+        <packages>
+            <package name="Tests.Intermediate"/>
+        </packages>
     </test>
 
 </suite>

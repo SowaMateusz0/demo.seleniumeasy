@@ -1,5 +1,0 @@
-14:16:19.434 [AsyncHttpClient-1-10] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26
-14:16:24.937 [TestNG] INFO  Tests.BaseClass - Fail Test case is : twoInputFields
-14:16:24.938 [AsyncHttpClient-1-13] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26
-14:16:29.127 [TestNG] INFO  Tests.BaseClass - Pass Test case is: twoInputFields
-14:16:29.127 [AsyncHttpClient-1-16] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26

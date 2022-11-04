@@ -3,11 +3,6 @@ package Tests;
 import Utility.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -21,7 +16,6 @@ public class Listeners extends BaseClass implements ITestListener {
     ExtentReports extentReports = ExtentReporter.getReportObject();
     ExtentTest test;
     ThreadLocal<ExtentTest> threadLocal = new ThreadLocal<>();
-    public static Logger log = LogManager.getLogger(BaseClass.class.getName());
     WebDriver driver;
 
     @Override
@@ -33,7 +27,6 @@ public class Listeners extends BaseClass implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-            log.info("Pass Test case is: " + iTestResult.getName(), Status.PASS);
     }
 
     @Override
@@ -52,15 +45,11 @@ public class Listeners extends BaseClass implements ITestListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        log.info("Fail Test case is : " +iTestResult.getName(), Status.FAIL);
-
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
         test = extentReports.createTest(iTestResult.getName());
-        test.log(Status.SKIP, MarkupHelper.createLabel(iTestResult.getName(), ExtentColor.ORANGE));
     }
 
     @Override

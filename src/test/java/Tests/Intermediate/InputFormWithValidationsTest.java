@@ -191,21 +191,21 @@ public class InputFormWithValidationsTest extends BaseClass {
     @DataProvider
     public Object[][] getInputSuccessData() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\InputFormWithValidation.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\InputFormWithValidationDataProvider.xlsx";
         return testData(path, 0);
     }
 
     @DataProvider
     public Object[][] getInputFailureData() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\InputFormWithValidation.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\InputFormWithValidationDataProvider.xlsx";
         return testData(path, 1);
     }
 
     @DataProvider
     public Object[][] getErrorMessageData() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\InputFormWithValidation.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\InputFormWithValidationDataProvider.xlsx";
         return testData(path, 2);
     }
 

@@ -56,7 +56,7 @@ public class SelectDropdownListTest extends BaseClass {
     @DataProvider()
     public Object[][] getDataSelectDropdownSingleList() throws IOException {
 
-        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\SelectDropdownList.xlsx";
+        String path = System.getProperty("user.dir") + "\\excelData\\Basic\\SelectDropdownListDataProvider.xlsx";
         return testData(path,0);
     }
 

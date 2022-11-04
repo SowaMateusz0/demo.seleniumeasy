@@ -2,11 +2,13 @@ package Utility;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.*;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -52,6 +54,9 @@ public class GenericsMethods {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-
+    public void dragAndDropBy(WebElement elementToDragAndDrop,int offSetX,int offSetY){
+        Actions actions = new Actions(driver);
+        actions.dragAndDropBy(elementToDragAndDrop,offSetX,offSetY).build().perform();
+    }
 
 }

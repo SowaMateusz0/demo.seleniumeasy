@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo.seleniumeasy" />
+        <module name="demo.seleniumeasy-Selenium_project" />
         <module name="Project_01_demo.seleniumeasy" />
       </profile>
     </annotationProcessing>

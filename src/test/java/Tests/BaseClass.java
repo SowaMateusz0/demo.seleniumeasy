@@ -91,17 +91,6 @@ public class BaseClass {
     }
 
 
-
-    public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException {
-        String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(jsonContent, new TypeReference<>() {
-        });
-    }
-
-
-
-
     public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);

@@ -24,11 +24,6 @@ public class GenericsMethods {
     }
 
 
-    public void waitForElementToBeVisible(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
     public void selectDropDown(WebElement dropDownMenu,String text){
         Select select = new Select(dropDownMenu);
         List<WebElement> options = select.getOptions();
@@ -49,10 +44,6 @@ public class GenericsMethods {
        return driver.switchTo().alert().getText();
     }
 
-    public void waitForInvisibilityOfElement(WebDriver driver, WebElement element, int duration){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(duration));
-        wait.until(ExpectedConditions.invisibilityOf(element));
-    }
 
     public void dragAndDropBy(WebElement elementToDragAndDrop,int offSetX,int offSetY){
         Actions actions = new Actions(driver);

@@ -6,6 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
 
 public class BootstrapModalsPage {
 
@@ -50,36 +53,43 @@ public class BootstrapModalsPage {
     //*************Single Modal Example*************
 
     public BootstrapModalsPage clickLaunchSingleModal() {
+        waitUntilElementIsClickable(launchSingleModal,driver);
         launchSingleModal.click();
         return this;
     }
 
     public BootstrapModalsPage clickSaveChangesSingleModal() {
+        waitUntilElementIsClickable(saveChangesSingleModal,driver);
          saveChangesSingleModal.click();
          return this;
     }
 
     public WebElement getSingleModalWindow() {
+        waitUntilElementIsVisible(singleModalWindow,driver);
         return singleModalWindow;
     }
 
     //*************Multi Modal Example*************
     public BootstrapModalsPage clickLaunchMultiModal() {
+        waitUntilElementIsClickable(launchMultiModal,driver);
         launchMultiModal.click();
         return this;
     }
 
     public BootstrapModalsPage clickLaunchMultiModalFirstModal() {
+        waitUntilElementIsClickable(launchMultiModalFirstModal,driver);
         launchMultiModalFirstModal.click();
         return this;
     }
 
     public BootstrapModalsPage clickSaveChangesMultiSecondModal() {
+        waitUntilElementIsClickable(saveChangesMultiSecondModal,driver);
         saveChangesMultiSecondModal.click();
         return this;
     }
 
     public WebElement getMultiModalWindow() {
+        waitUntilElementIsVisible(multiModalWindow,driver);
         return multiModalWindow;
     }
 

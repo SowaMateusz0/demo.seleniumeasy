@@ -8,12 +8,13 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AjaxFormSubmitPage extends GenericsMethods {
+import static Utility.waits.WaitForElement.*;
+
+public class AjaxFormSubmitPage {
 
     WebDriver driver;
 
     public AjaxFormSubmitPage(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
@@ -43,22 +44,25 @@ public class AjaxFormSubmitPage extends GenericsMethods {
     //*************Ajax Form*************
 
     public AjaxFormSubmitPage enterName(String text) {
+        waitUntilElementIsVisible(nameField,driver);
         nameField.sendKeys(text);
         return this;
     }
 
     public AjaxFormSubmitPage enterComment(String text) {
+        waitUntilElementIsVisible(commentField,driver);
         commentField.sendKeys(text);
         return this;
     }
 
     public AjaxFormSubmitPage clickSubmit(){
+        waitUntilElementIsClickable(submitButton,driver);
         submitButton.click();
         return this;
     }
 
     public String getMessage() {
-        waitForInvisibilityOfElement(driver,icon,5);
+        waitForInvisibilityOfElement(message,driver);
         return message.getText();
     }
 }

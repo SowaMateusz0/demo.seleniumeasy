@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class BootstrapListBoxPage {
 
     WebDriver driver;
@@ -47,25 +49,30 @@ public class BootstrapListBoxPage {
 
 
     public BootstrapListBoxPage clickSelectAllElementsFromLeftTableButton(){
+        waitUntilElementIsClickable(selectAllElementsFromLeftTable,driver);
         selectAllElementsFromLeftTable.click();
         return this;
     }
 
     public BootstrapListBoxPage clickMoveElementsToRightBox(){
+        waitUntilElementIsClickable(moveElementToRightBox,driver);
         moveElementToRightBox.click();
         return this;
     }
 
     public List<WebElement> getSecondBoxWithElements(){
+        waitUntilAllElementsAreVisible(secondBoxWithElements,driver);
         return secondBoxWithElements;
     }
 
     public BootstrapListBoxPage enterValueIntoSearchField(String text){
+        waitUntilElementIsVisible(searchField,driver);
         searchField.sendKeys(text);
         return this;
     }
 
     public List<WebElement> getListOfSearchedElements(){
+        waitUntilAllElementsAreVisible(listOfSearchedElements,driver);
         return listOfSearchedElements;
     }
 

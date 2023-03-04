@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+
 public class HomePage extends GenericsMethods {
 
     WebDriver driver;
@@ -48,15 +50,15 @@ public class HomePage extends GenericsMethods {
 
         switch (difficultyOfExercises) {
             case BASIC -> {
-                waitForElementToBeVisible(basicBtn);
+                waitUntilElementIsClickable(basicBtn,driver);
                 basicBtn.click();
             }
             case INTERMEDIATE -> {
-                waitForElementToBeVisible(intermediateBtn);
+                waitUntilElementIsClickable(intermediateBtn,driver);
                 intermediateBtn.click();
             }
             case ADVANCED -> {
-                waitForElementToBeVisible(advancedBtn);
+                waitUntilElementIsClickable(advancedBtn,driver);
                 advancedBtn.click();
             }
         }
@@ -64,16 +66,19 @@ public class HomePage extends GenericsMethods {
     }
 
     public HomePage chooseBasicExample(int indexOfExample){
+        waitUntilElementIsClickable(listOfBasicExercises.get(indexOfExample),driver);
         listOfBasicExercises.get(indexOfExample).click();
         return this;
     }
 
     public HomePage chooseIntermediateExample(int indexOfExample){
+        waitUntilElementIsClickable(listOfIntermediateExercises.get(indexOfExample),driver);
         listOfIntermediateExercises.get(indexOfExample).click();
         return this;
     }
 
     public HomePage chooseAdvancedExample(int indexOfExample){
+        waitUntilElementIsClickable(listOfAdvancedExercises.get(indexOfExample),driver);
         listOfAdvancedExercises.get(indexOfExample).click();
         return this;
     }

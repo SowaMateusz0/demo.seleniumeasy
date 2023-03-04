@@ -7,6 +7,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
 public class JavascriptAlertsPage extends GenericsMethods {
 
 
@@ -45,6 +48,7 @@ public class JavascriptAlertsPage extends GenericsMethods {
     private WebElement messageAfterPromptBox;
 
     public JavascriptAlertsPage clickAlertClickMeButton(){
+        waitUntilElementIsClickable(alertClickMeButton,driver);
         alertClickMeButton.click();
         return this;
     }
@@ -54,20 +58,24 @@ public class JavascriptAlertsPage extends GenericsMethods {
     }
 
     public JavascriptAlertsPage clickConfirmClickMeButton(){
+        waitUntilElementIsClickable(confirmClickMeButton,driver);
         confirmClickMeButton.click();
         return this;
     }
 
     public String getMessageAfterConfirmBox() {
+        waitUntilElementIsVisible(messageAfterConfirmBox,driver);
         return messageAfterConfirmBox.getText();
     }
 
     public JavascriptAlertsPage clickPromptBox(){
+        waitUntilElementIsClickable(clickForPromptBox,driver);
         clickForPromptBox.click();
         return this;
     }
 
     public String getMessageAfterConfirmPromptBox() {
+        waitUntilElementIsVisible(messageAfterPromptBox,driver);
         return messageAfterPromptBox.getText();
     }
 }

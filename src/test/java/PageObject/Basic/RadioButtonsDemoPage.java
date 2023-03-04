@@ -9,12 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class RadioButtonsDemoPage extends GenericsMethods {
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
+public class RadioButtonsDemoPage {
 
     WebDriver driver;
 
     public RadioButtonsDemoPage(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
@@ -58,38 +60,46 @@ public class RadioButtonsDemoPage extends GenericsMethods {
     //*************Radio Button Demo*************
 
     public RadioButtonsDemoPage clickMaleButton() {
+        waitUntilElementIsClickable(maleRadioButton,driver);
         maleRadioButton.click();
         return this;
     }
 
     public RadioButtonsDemoPage clickFemaleButton() {
+        waitUntilElementIsClickable(femaleRadioButton,driver);
         femaleRadioButton.click();
         return this;
     }
     public RadioButtonsDemoPage getCheckedValueButton() {
+        waitUntilElementIsClickable(checkedValueButton,driver);
         checkedValueButton.click();
         return this;
     }
 
     public String getTextValue() {
+        waitUntilElementIsVisible(textValue,driver);
         return textValue.getText();
     }
 
     //*************Group Radio Buttons Demo*************
 
     public WebElement getGenderRadioButton(int index) {
+        waitUntilElementIsVisible(genderRadioButton.get(index),driver);
         return genderRadioButton.get(index);
     }
 
     public WebElement getAgeGroupRadioButtons(int index){
+        waitUntilElementIsVisible(ageGroupRadioButton.get(index),driver);
         return ageGroupRadioButton.get(index);
     }
 
     public WebElement getGetValuesButton() {
+        waitUntilElementIsVisible(getValuesButton,driver);
         return getValuesButton;
     }
 
     public String getGroupTextValue() {
+        waitUntilElementIsVisible(groupTextValue,driver);
         return groupTextValue.getText();
     }
 

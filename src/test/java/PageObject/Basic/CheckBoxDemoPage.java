@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class CheckBoxDemoPage extends GenericsMethods {
 
     WebDriver driver;
@@ -42,30 +44,37 @@ public class CheckBoxDemoPage extends GenericsMethods {
 
     //*************Single Checkbox Demo*************
     public WebElement getSingleCheckBox() {
+        waitUntilElementIsVisible(checkAllButton,driver);
         return checkBoxMessage;
     }
     public CheckBoxDemoPage clickSingleCheckBox() {
+        waitUntilElementIsClickable(checkBoxMessage,driver);
         checkBoxMessage.click();
         return this;
     }
 
     public String getMessageAfterClickCheckbox() {
+        waitUntilElementIsVisible(messageAfterClickCheckbox,driver);
         return messageAfterClickCheckbox.getText();
     }
 
     //*************Multiple Checkbox Demo*************
     public List<WebElement> getOptionsCheckboxes() {
+        waitUntilAllElementsAreVisible(optionsCheckboxes,driver);
         return optionsCheckboxes;
     }
 
     public WebElement clickOptionsCheckbox(int index) {
+        waitUntilElementIsVisible(optionsCheckboxes.get(index),driver);
         return optionsCheckboxes.get(index);
     }
 
     public WebElement getCheckAllButton() {
+        waitUntilElementIsClickable(checkAllButton,driver);
         return checkAllButton;
     }
     public CheckBoxDemoPage clickCheckAllButton() {
+        waitUntilElementIsClickable(checkAllButton,driver);
         checkAllButton.click();
         return this;
     }

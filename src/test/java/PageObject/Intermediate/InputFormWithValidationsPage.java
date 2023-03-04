@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class InputFormWithValidationsPage extends GenericsMethods {
 
     WebDriver driver;
@@ -128,60 +130,72 @@ public class InputFormWithValidationsPage extends GenericsMethods {
     //*************Fields*************
 
     public InputFormWithValidationsPage enterFirstName(String text){
+        waitForInvisibilityOfElement(firstNameField,driver);
         firstNameField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterLastName(String text){
+        waitForInvisibilityOfElement(lastNameField,driver);
         lastNameField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterEmail(String text){
+        waitForInvisibilityOfElement(emailField,driver);
         emailField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterPhone(String text){
+        waitForInvisibilityOfElement(phoneField,driver);
         phoneField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterAddress(String text){
+        waitForInvisibilityOfElement(addressField,driver);
         addressField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterCity(String text){
+        waitForInvisibilityOfElement(cityField,driver);
         cityField.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage chooseState(WebElement state, String stateName){
+        waitUntilElementIsVisible(state,driver);
         selectDropDown(state, stateName);
         return this;
     }
 
     public WebElement getState(){
+        waitUntilElementIsVisible(state,driver);
         return state;
     }
 
     public InputFormWithValidationsPage enterZipCode(String text){
+        waitUntilElementIsVisible(website,driver);
         zip.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage enterWebsite(String text){
+        waitUntilElementIsVisible(website,driver);
         website.sendKeys(text);
         return this;
     }
 
     public InputFormWithValidationsPage doYouWantHaveHostingRadioBox(int index){
+        waitUntilElementIsClickable(radioBox.get(index),driver);
         radioBox.get(index).click();
         return this;
     }
 
     public InputFormWithValidationsPage enterComment(String text){
+        waitUntilElementIsVisible(comment,driver);
         comment.sendKeys(text);
         return this;
     }
@@ -189,56 +203,69 @@ public class InputFormWithValidationsPage extends GenericsMethods {
     //*************Text*************
 
     public WebElement getFirstNameText(){
+        waitUntilElementIsVisible(firstNameText,driver);
         return firstNameText;
     }
 
     public WebElement getLastNameText(){
+        waitUntilElementIsVisible(lastNameText,driver);
         return lastNameText;
     }
 
     public WebElement getEmailText(){
+        waitUntilElementIsVisible(emailText,driver);
         return emailText;
     }
 
     public WebElement getPhoneText(){
+        waitUntilElementIsVisible(firstNameText,driver);
         return firstNameText;
     }
 
     public WebElement getAddressText(){
+        waitUntilElementIsVisible(addressText,driver);
         return addressText;
     }
 
     public WebElement getCityTextText(){
+        waitUntilElementIsVisible(cityText,driver);
         return cityText;
     }
 
     public WebElement getStateText(){
+        waitUntilElementIsVisible(stateText,driver);
         return stateText;
     }
 
     public WebElement getZipCodeText(){
+        waitUntilElementIsVisible(zipCodeText,driver);
         return zipCodeText;
     }
 
     public WebElement getWebsiteText(){
+        waitUntilElementIsVisible(websiteText,driver);
         return websiteText;
     }
 
     public WebElement getHostingText(){
+        waitUntilElementIsVisible(hosting,driver);
         return hosting;
     }
 
     public WebElement getDescriptionText(){
+        waitUntilElementIsVisible(descriptionText,driver);
         return descriptionText;
     }
 
     public List<WebElement> getRadioBox(){
+        waitUntilAllElementsAreVisible(radioBox,driver);
         return radioBox;
     }
 
     //*************Error Messages*************
 
     public List<WebElement> getErrorMessages(){
+        waitUntilAllElementsAreVisible(errorMessages,driver);
         return errorMessages;
     }
 

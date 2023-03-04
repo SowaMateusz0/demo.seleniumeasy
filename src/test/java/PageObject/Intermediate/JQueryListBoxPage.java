@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class JQueryListBoxPage extends GenericsMethods {
 
     WebDriver driver;
@@ -49,25 +51,30 @@ public class JQueryListBoxPage extends GenericsMethods {
     }
 
     public List<WebElement> getElementsOnRightList(){
+        waitUntilAllElementsAreVisible(elementsInResultList,driver);
         return elementsInResultList;
     }
 
     public JQueryListBoxPage getElementFormPickListData(String text){
+        waitUntilElementIsVisible(pickListData,driver);
         selectDropDown(pickListData,text);
         return this;
     }
 
     public JQueryListBoxPage clickAddButton(){
+        waitUntilElementIsClickable(addButton,driver);
         addButton.click();
         return this;
     }
 
     public JQueryListBoxPage clickRemoveAllButton(){
+        waitUntilElementIsClickable(removeAllButton,driver);
         removeAllButton.click();
         return this;
     }
 
     public JQueryListBoxPage clickRemoveButton(){
+        waitUntilElementIsClickable(removeButton,driver);
         removeButton.click();
         return this;
     }

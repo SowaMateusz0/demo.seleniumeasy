@@ -7,6 +7,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
 public class SimpleFormDemoPage extends GenericsMethods {
 
     WebDriver driver;
@@ -48,37 +51,44 @@ public class SimpleFormDemoPage extends GenericsMethods {
 
     //*************Single Input Field*************
     public SimpleFormDemoPage setEnterMessageBox(String text){
+        waitUntilElementIsVisible(enterMessageBox,driver);
         enterMessageBox.sendKeys(text);
         return this;
     }
 
     public SimpleFormDemoPage clickShowMessageButton(){
+        waitUntilElementIsClickable(showMessageButton,driver);
         showMessageButton.click();
         return this;
     }
 
     public String getMessage() {
+        waitUntilElementIsVisible(message,driver);
         return message.getText();
     }
 
     //*************Two Input Fields*************
 
-    public SimpleFormDemoPage enterFirstNumber(String num1){
-        firstSumValue.sendKeys(num1);
+    public SimpleFormDemoPage enterFirstNumber(String number_one){
+        waitUntilElementIsVisible(firstSumValue,driver);
+        firstSumValue.sendKeys(number_one);
         return this;
     }
 
-    public SimpleFormDemoPage enterSecondNumber(String num2){
-        secondSumValue.sendKeys(num2);
+    public SimpleFormDemoPage enterSecondNumber(String number_two){
+        waitUntilElementIsVisible(secondSumValue,driver);
+        secondSumValue.sendKeys(number_two);
         return this;
     }
 
     public SimpleFormDemoPage clickGetTotalButton(){
+        waitUntilElementIsClickable(getTotal,driver);
         getTotal.click();
         return this;
     }
 
     public String getValue() {
+        waitUntilElementIsVisible(secondSumValue,driver);
         return showSumValue.getText();
     }
 

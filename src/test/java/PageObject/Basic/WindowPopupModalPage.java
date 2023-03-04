@@ -6,6 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
 public class WindowPopupModalPage {
 
     WebDriver driver;
@@ -38,16 +41,19 @@ public class WindowPopupModalPage {
 
 
     public WindowPopupModalPage clickFollowOnTwitterButton(){
+        waitUntilElementIsClickable(followOnTwitterButton,driver);
         followOnTwitterButton.click();
         return this;
     }
 
     public WindowPopupModalPage clickLikeUsOnFacebookButton(){
+        waitUntilElementIsClickable(likeUsOnFacebook,driver);
         likeUsOnFacebook.click();
         return this;
     }
 
     public WindowPopupModalPage clickFollowTwitterAndFacebook(){
+        waitUntilElementIsClickable(followTwitterAndFacebook,driver);
         followTwitterAndFacebook.click();
         return this;
     }

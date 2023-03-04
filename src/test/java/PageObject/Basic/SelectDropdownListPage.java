@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+
 public class SelectDropdownListPage extends GenericsMethods {
 
     WebDriver driver;
@@ -54,27 +56,33 @@ public class SelectDropdownListPage extends GenericsMethods {
     private WebElement getOutputTextMultiSelectDropDownList;
 
     public WebElement listOfAllDays(){
+        waitUntilElementIsVisible(singleList,driver);
         return singleList;
     }
 
     public String getOutputTextFromSingleSelectDropDownList(){
+        waitUntilElementIsVisible(outputTextSingleDropDownList,driver);
         return outputTextSingleDropDownList.getText();
     }
 
     public SelectDropdownListPage selectElementFromDropDownMenu(WebElement element,String visibleText){
+        waitUntilElementIsVisible(element,driver);
         selectDropDown(element,visibleText);
         return this;
     }
 
     public WebElement getGetAllSelectedButton() {
+        waitUntilElementIsVisible(getAllSelectedButton,driver);
         return getAllSelectedButton;
     }
 
     public String getGetTextFromMultiSelect() {
+        waitUntilElementIsVisible(getOutputTextMultiSelectDropDownList,driver);
         return getOutputTextMultiSelectDropDownList.getText();
     }
 
     public WebElement getIndexOfElementFromMultiSelectList(int index){
+        waitUntilElementIsVisible(allElementsFromMultiSelectList.get(index),driver);
         return allElementsFromMultiSelectList.get(index);
     }
 }

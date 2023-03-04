@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class BootStrapAlertsPage {
 
     WebDriver driver;
@@ -36,25 +38,30 @@ public class BootStrapAlertsPage {
     private List<WebElement> autocloseableAlertsMessage;
 
     public List<WebElement> getNormalAlertsMessage() {
+        waitUntilAllElementsAreVisible(normalAlertsMessage,driver);
         return normalAlertsMessage;
     }
 
     public List<WebElement> getNormalMessagesList(){
+        waitUntilAllElementsAreVisible(normalMessages,driver);
         return normalMessages;
     }
 
     public BootStrapAlertsPage openNormalMessages(){
         for (WebElement element: normalMessages) {
+            waitUntilElementIsClickable(element,driver);
             element.click();
         }
         return this;
     }
 
     public List<WebElement> getAutocloseableMessagesList() {
+        waitUntilAllElementsAreVisible(autocloseableAlertsMessage,driver);
         return autocloseableAlertsMessage;
     }
 
     public List<WebElement> getAutocloseableListButtons() {
+        waitUntilAllElementsAreVisible(autocloseableAlertsMessage,driver);
         return autocloseableMessages;
     }
 }

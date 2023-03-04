@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static Utility.waits.WaitForElement.*;
+
 public class JQuerySelectDropdownPage extends GenericsMethods {
 
     WebDriver driver;
@@ -64,23 +66,28 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
     @FindBy(xpath= "//select[@id='files']/optgroup/option")
     @CacheLookup
     private List<WebElement> dropDownWithDCategoryList;
+
     //*************Drop Down with Search box*************
 
     public JQuerySelectDropdownPage clickSelectCountryDropDown() {
+        waitUntilElementIsClickable(selectCountryDropDown,driver);
         selectCountryDropDown.click();
         return this;
     }
 
     public List<WebElement> getListOfCountry() {
+        waitUntilAllElementsAreVisible(listOfCountry,driver);
         return listOfCountry;
     }
 
     public WebElement getSelectedCountry(){
+        waitUntilElementIsVisible(selectedCountry,driver);
         return selectedCountry;
     }
     //*************Select Multiple Values*************
 
     public JQuerySelectDropdownPage selectElement(String text){
+        waitUntilElementIsClickable(selectListOfStates,driver);
         selectListOfStates.click();
         selectListOfStates.sendKeys(text);
         selectListOfStates.sendKeys(Keys.ENTER);
@@ -88,27 +95,32 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
     }
 
     public List<WebElement> getSelectedStates() {
+        waitUntilAllElementsAreVisible(selectedStates,driver);
         return selectedStates;
     }
 
     //*************DropDown with Disabled values*************
     public JQuerySelectDropdownPage getValueFromDropdownWithDisabledValues(String text){
+        waitUntilElementIsVisible(dropDownWithDisablesValues,driver);
         selectDropDown(dropDownWithDisablesValues,text);
         return this;
     }
 
     public List<WebElement> getListOFDropdownWithDisabledValues(){
+        waitUntilAllElementsAreVisible(dropDownWithDisablesValuesList,driver);
         return dropDownWithDisablesValuesList;
     }
 
     //*************DropDown with Category related options*************
 
     public JQuerySelectDropdownPage getValueFromDropdownWithCategory(String text){
+        waitUntilElementIsVisible(dropDownWithCategory,driver);
         selectDropDown(dropDownWithCategory,text);
         return this;
     }
 
     public List<WebElement> getListOFDropdownWithCategory(){
+        waitUntilAllElementsAreVisible(dropDownWithDCategoryList,driver);
         return dropDownWithDCategoryList;
     }
 }

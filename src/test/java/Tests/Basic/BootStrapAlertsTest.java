@@ -58,16 +58,6 @@ public class BootStrapAlertsTest extends BaseClass {
             if(normalAlert.getText().contains(text)){
                 Assert.assertEquals(getColorAndBackgroundColor(normalAlert),styleExpected);
             }
-            else if(normalAlert.getText().contains(text)) {
-                Assert.assertEquals(getColorAndBackgroundColor(normalAlert),styleExpected);
-            }
-            else if(normalAlert.getText().contains(text)) {
-                Assert.assertEquals(getColorAndBackgroundColor(normalAlert),styleExpected);
-            }
-            else if(normalAlert.getText().contains(text)) {
-                Assert.assertEquals(getColorAndBackgroundColor(normalAlert),styleExpected);
-            }
-
         }
     }
 

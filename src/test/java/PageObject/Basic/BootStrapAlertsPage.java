@@ -43,20 +43,15 @@ public class BootStrapAlertsPage {
         return normalMessages;
     }
 
-    public void openNormalMessages(){
+    public BootStrapAlertsPage openNormalMessages(){
         for (WebElement element: normalMessages) {
             element.click();
         }
+        return this;
     }
 
     public List<WebElement> getAutocloseableMessagesList() {
         return autocloseableAlertsMessage;
-    }
-
-    public void openAutocloseableMessages(){
-        for (WebElement element: autocloseableMessages) {
-            element.click();
-        }
     }
 
     public List<WebElement> getAutocloseableListButtons() {

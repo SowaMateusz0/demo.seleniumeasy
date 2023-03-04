@@ -13,8 +13,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 
 
@@ -41,16 +44,23 @@ public class BaseClass {
 
         if(browserName.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setAcceptInsecureCerts(true);
+            driver = new ChromeDriver(chromeOptions);
         }
         else if(browserName.equalsIgnoreCase("firefox")){
             WebDriverManager.chromedriver().setup();
-            driver = new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setAcceptInsecureCerts(true);
+            driver = new FirefoxDriver(firefoxOptions);
         }
         else if(browserName.equalsIgnoreCase("ie")){
             WebDriverManager.chromedriver().setup();
-            driver = new EdgeDriver();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.setAcceptInsecureCerts(true);
+            driver = new EdgeDriver(edgeOptions);
         }
+
 
         driver.get(properties.getProperty("url"));
         driver.manage().window().maximize();

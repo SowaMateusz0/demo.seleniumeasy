@@ -49,12 +49,14 @@ public class BootstrapModalsPage {
 
     //*************Single Modal Example*************
 
-    public void clickLaunchSingleModal() {
+    public BootstrapModalsPage clickLaunchSingleModal() {
         launchSingleModal.click();
+        return this;
     }
 
-    public void clickSaveChangesSingleModal() {
+    public BootstrapModalsPage clickSaveChangesSingleModal() {
          saveChangesSingleModal.click();
+         return this;
     }
 
     public WebElement getSingleModalWindow() {
@@ -62,16 +64,19 @@ public class BootstrapModalsPage {
     }
 
     //*************Multi Modal Example*************
-    public void clickLaunchMultiModal() {
+    public BootstrapModalsPage clickLaunchMultiModal() {
         launchMultiModal.click();
+        return this;
     }
 
-    public void clickLaunchMultiModalFirstModal() {
+    public BootstrapModalsPage clickLaunchMultiModalFirstModal() {
         launchMultiModalFirstModal.click();
+        return this;
     }
 
-    public void clickSaveChangesMultiSecondModal() {
+    public BootstrapModalsPage clickSaveChangesMultiSecondModal() {
         saveChangesMultiSecondModal.click();
+        return this;
     }
 
     public WebElement getMultiModalWindow() {

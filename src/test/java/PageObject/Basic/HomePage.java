@@ -17,7 +17,7 @@ public class HomePage extends GenericsMethods {
     public HomePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//span[@class='round-tabs two']")
@@ -44,27 +44,41 @@ public class HomePage extends GenericsMethods {
     @CacheLookup
     private List<WebElement> listOfAdvancedExercises;
 
-    public void goToExercisesWebsite(DifficultyOfExercises difficultyOfExercises, int indexOfExample){
+    public HomePage goToExercisesWebsite(DifficultyOfExercises difficultyOfExercises) {
 
         switch (difficultyOfExercises) {
-                case BASIC-> {
-                    waitForElementToBeVisible(basicBtn);
-                    basicBtn.click();
-                    listOfBasicExercises.get(indexOfExample).click();
-                }
-                case INTERMEDIATE -> {
-                    waitForElementToBeVisible(intermediateBtn);
-                    intermediateBtn.click();
-                    listOfIntermediateExercises.get(indexOfExample).click();
-                }
-                case ADVANCED -> {
-                    waitForElementToBeVisible(advancedBtn);
-                    advancedBtn.click();
-                    listOfAdvancedExercises.get(indexOfExample).click();
-                }
+            case BASIC -> {
+                waitForElementToBeVisible(basicBtn);
+                basicBtn.click();
+            }
+            case INTERMEDIATE -> {
+                waitForElementToBeVisible(intermediateBtn);
+                intermediateBtn.click();
+            }
+            case ADVANCED -> {
+                waitForElementToBeVisible(advancedBtn);
+                advancedBtn.click();
             }
         }
+        return this;
     }
+
+    public HomePage chooseBasicExample(int indexOfExample){
+        listOfBasicExercises.get(indexOfExample).click();
+        return this;
+    }
+
+    public HomePage chooseIntermediateExample(int indexOfExample){
+        listOfIntermediateExercises.get(indexOfExample).click();
+        return this;
+    }
+
+    public HomePage chooseAdvancedExample(int indexOfExample){
+        listOfAdvancedExercises.get(indexOfExample).click();
+        return this;
+    }
+
+}
 
 
 

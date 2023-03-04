@@ -43,27 +43,32 @@ public class JQueryListBoxPage extends GenericsMethods {
     @CacheLookup
     private WebElement pickListData;
 
-    public void clickAddAllButton(){
+    public JQueryListBoxPage clickAddAllButton(){
         addAllButton.click();
+        return this;
     }
 
     public List<WebElement> getElementsOnRightList(){
         return elementsInResultList;
     }
 
-    public void getElementFormPickListData(String text){
+    public JQueryListBoxPage getElementFormPickListData(String text){
         selectDropDown(pickListData,text);
+        return this;
     }
 
-    public void clickAddButton(){
+    public JQueryListBoxPage clickAddButton(){
         addButton.click();
+        return this;
     }
 
-    public void clickRemoveAllButton(){
+    public JQueryListBoxPage clickRemoveAllButton(){
         removeAllButton.click();
+        return this;
     }
 
-    public void clickRemoveButton(){
+    public JQueryListBoxPage clickRemoveButton(){
         removeButton.click();
+        return this;
     }
 }

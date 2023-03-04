@@ -27,7 +27,7 @@ public class JavascriptAlertsTest extends BaseClass {
         final String alertText = "I am an alert box!";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,4);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlertsPage = new JavascriptAlertsPage(driver);
 
         javascriptAlertsPage.clickAlertClickMeButton();
@@ -42,7 +42,7 @@ public class JavascriptAlertsTest extends BaseClass {
         final String textAfterAcceptAlert = "You pressed OK!";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,4);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlertsPage = new JavascriptAlertsPage(driver);
         javascriptAlertsPage.clickConfirmClickMeButton();
         driver.switchTo().alert().accept();
@@ -55,7 +55,7 @@ public class JavascriptAlertsTest extends BaseClass {
         final String textAfterAcceptAlert = "You pressed Cancel!";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,4);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlertsPage = new JavascriptAlertsPage(driver);
         javascriptAlertsPage.clickConfirmClickMeButton();
         driver.switchTo().alert().dismiss();
@@ -68,7 +68,7 @@ public class JavascriptAlertsTest extends BaseClass {
         final String outPutText= "You have entered 'Hello' !";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 4);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlerts = new JavascriptAlertsPage(driver);
 
         javascriptAlerts.clickPromptBox();

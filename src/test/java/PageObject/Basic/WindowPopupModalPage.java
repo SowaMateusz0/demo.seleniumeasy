@@ -37,15 +37,18 @@ public class WindowPopupModalPage {
 
 
 
-    public void clickFollowOnTwitterButton(){
+    public WindowPopupModalPage clickFollowOnTwitterButton(){
         followOnTwitterButton.click();
+        return this;
     }
 
-    public void clickLikeUsOnFacebookButton(){
+    public WindowPopupModalPage clickLikeUsOnFacebookButton(){
         likeUsOnFacebook.click();
+        return this;
     }
 
-    public void clickFollowTwitterAndFacebook(){
+    public WindowPopupModalPage clickFollowTwitterAndFacebook(){
         followTwitterAndFacebook.click();
+        return this;
     }
 }

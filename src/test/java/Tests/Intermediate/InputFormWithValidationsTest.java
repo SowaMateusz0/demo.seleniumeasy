@@ -29,20 +29,20 @@ public class InputFormWithValidationsTest extends BaseClass {
     public void ValidateAllSuccessInputCheckTextColor(String firstName,String lastName,String email,String phone,String address,String city,String state,String zipCode, String website,String comment){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(0);
         InputFormWithValidationsPage inputFormWithValidationsPage = new InputFormWithValidationsPage(driver);
 
-        inputFormWithValidationsPage.enterFirstName(firstName);
-        inputFormWithValidationsPage.enterLastName(lastName);
-        inputFormWithValidationsPage.enterEmail(email);
-        inputFormWithValidationsPage.enterPhone(phone);
-        inputFormWithValidationsPage.enterAddress(address);
-        inputFormWithValidationsPage.enterCity(city);
-        inputFormWithValidationsPage.chooseState(inputFormWithValidationsPage.getState(),state);
-        inputFormWithValidationsPage.enterZipCode(zipCode);
-        inputFormWithValidationsPage.enterWebsite(website);
-        inputFormWithValidationsPage.doYouWantHaveHostingRadioBox(0);
-        inputFormWithValidationsPage.enterComment(comment);
+        inputFormWithValidationsPage.enterFirstName(firstName)
+                .enterLastName(lastName)
+                .enterEmail(email)
+                .enterPhone(phone)
+                .enterAddress(address)
+                .enterCity(city)
+                .chooseState(inputFormWithValidationsPage.getState(),state)
+                .enterZipCode(zipCode)
+                .enterWebsite(website)
+                .doYouWantHaveHostingRadioBox(0)
+                .enterComment(comment);
 
 
         List<String> textColor = new ArrayList<>();
@@ -68,8 +68,8 @@ public class InputFormWithValidationsTest extends BaseClass {
 
         List<String> expectedTextColorAsHex = new ArrayList<>();
 
-        String greenSuccessColor = "#3c763d";
-        String blackColor = "#333333";
+        final String greenSuccessColor = "#3c763d";
+        final String blackColor = "#333333";
 
         expectedTextColorAsHex.add(greenSuccessColor);
         expectedTextColorAsHex.add(greenSuccessColor);
@@ -90,19 +90,19 @@ public class InputFormWithValidationsTest extends BaseClass {
     public void ValidateAllFailureInputCheckTextColor(String firstName,String lastName,String email,String phone,String address,String city,String state,String zipCode,String comment){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(0);
         InputFormWithValidationsPage inputFormWithValidationsPage = new InputFormWithValidationsPage(driver);
 
-        inputFormWithValidationsPage.enterFirstName(firstName);
-        inputFormWithValidationsPage.enterLastName(lastName);
-        inputFormWithValidationsPage.enterEmail(email);
-        inputFormWithValidationsPage.enterPhone(phone);
-        inputFormWithValidationsPage.enterAddress(address);
-        inputFormWithValidationsPage.enterCity(city);
-        inputFormWithValidationsPage.chooseState(inputFormWithValidationsPage.getState(),"Alaska");
-        inputFormWithValidationsPage.chooseState(inputFormWithValidationsPage.getState(),state);
-        inputFormWithValidationsPage.enterZipCode(zipCode);
-        inputFormWithValidationsPage.enterComment(comment);
+        inputFormWithValidationsPage.enterFirstName(firstName)
+                .enterLastName(lastName)
+                .enterEmail(email)
+                .enterPhone(phone)
+                .enterAddress(address)
+                .enterCity(city)
+                .chooseState(inputFormWithValidationsPage.getState(),"Alaska")
+                .chooseState(inputFormWithValidationsPage.getState(),state)
+                .enterZipCode(zipCode)
+                .enterComment(comment);
 
         List<String> textColor = new ArrayList<>();
         textColor.add(inputFormWithValidationsPage.getFirstNameText().getCssValue("color"));
@@ -132,28 +132,27 @@ public class InputFormWithValidationsTest extends BaseClass {
         }
 
         Assert.assertEquals(textColorAsHex,expectedTextColorAsHex);
-
     }
 
     @Test(dataProvider = "getErrorMessageData")
     public void ValidateErrorMessage(String firstNameErrorMessage,String lastNameErrorMessage,String emailErrorMessage,String phoneErrorMessage,String addressErrorMessage,String cityErrorMessage,String stateErrorMessage,String zipCodeErrorMessage,String commentErrorMessage){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(0);
         InputFormWithValidationsPage inputFormWithValidationsPage = new InputFormWithValidationsPage(driver);
 
-        String invalidText = "a";
+        final String INVALID_TEXT = "a";
 
-        inputFormWithValidationsPage.enterFirstName(invalidText);
-        inputFormWithValidationsPage.enterLastName(invalidText);
-        inputFormWithValidationsPage.enterEmail(invalidText);
-        inputFormWithValidationsPage.enterPhone(invalidText);
-        inputFormWithValidationsPage.enterAddress(invalidText);
-        inputFormWithValidationsPage.enterCity(invalidText);
-        inputFormWithValidationsPage.chooseState(inputFormWithValidationsPage.getState(),"Alaska");
-        inputFormWithValidationsPage.chooseState(inputFormWithValidationsPage.getState(),"Please select your state");
-        inputFormWithValidationsPage.enterZipCode(invalidText);
-        inputFormWithValidationsPage.enterComment(invalidText);
+        inputFormWithValidationsPage.enterFirstName(INVALID_TEXT)
+                .enterLastName(INVALID_TEXT)
+                .enterEmail(INVALID_TEXT)
+                .enterPhone(INVALID_TEXT)
+                .enterAddress(INVALID_TEXT)
+                .enterCity(INVALID_TEXT)
+                .chooseState(inputFormWithValidationsPage.getState(),"Alaska")
+                .chooseState(inputFormWithValidationsPage.getState(),"Please select your state")
+                .enterZipCode(INVALID_TEXT)
+                .enterComment(INVALID_TEXT);
 
         ArrayList<String> expectedErrorMessages = new ArrayList<>();
 
@@ -179,7 +178,7 @@ public class InputFormWithValidationsTest extends BaseClass {
     public void ValidateSelectedHosingBoxes(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(0);
         InputFormWithValidationsPage inputFormWithValidationsPage = new InputFormWithValidationsPage(driver);
 
         for (int i = 0; i < inputFormWithValidationsPage.getRadioBox().size() ; i++) {

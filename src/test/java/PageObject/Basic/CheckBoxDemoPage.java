@@ -44,8 +44,9 @@ public class CheckBoxDemoPage extends GenericsMethods {
     public WebElement getSingleCheckBox() {
         return checkBoxMessage;
     }
-    public void clickSingleCheckBox() {
+    public CheckBoxDemoPage clickSingleCheckBox() {
         checkBoxMessage.click();
+        return this;
     }
 
     public String getMessageAfterClickCheckbox() {
@@ -64,8 +65,9 @@ public class CheckBoxDemoPage extends GenericsMethods {
     public WebElement getCheckAllButton() {
         return checkAllButton;
     }
-    public void clickCheckAllButton() {
+    public CheckBoxDemoPage clickCheckAllButton() {
         checkAllButton.click();
+        return this;
     }
 
 }

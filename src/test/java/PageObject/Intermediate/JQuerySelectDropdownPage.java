@@ -66,8 +66,9 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
     private List<WebElement> dropDownWithDCategoryList;
     //*************Drop Down with Search box*************
 
-    public void clickSelectCountryDropDown() {
+    public JQuerySelectDropdownPage clickSelectCountryDropDown() {
         selectCountryDropDown.click();
+        return this;
     }
 
     public List<WebElement> getListOfCountry() {
@@ -79,10 +80,11 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
     }
     //*************Select Multiple Values*************
 
-    public void selectElement(String text){
+    public JQuerySelectDropdownPage selectElement(String text){
         selectListOfStates.click();
         selectListOfStates.sendKeys(text);
         selectListOfStates.sendKeys(Keys.ENTER);
+        return this;
     }
 
     public List<WebElement> getSelectedStates() {
@@ -90,8 +92,9 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
     }
 
     //*************DropDown with Disabled values*************
-    public void getValueFromDropdownWithDisabledValues(String text){
+    public JQuerySelectDropdownPage getValueFromDropdownWithDisabledValues(String text){
         selectDropDown(dropDownWithDisablesValues,text);
+        return this;
     }
 
     public List<WebElement> getListOFDropdownWithDisabledValues(){
@@ -100,8 +103,9 @@ public class JQuerySelectDropdownPage extends GenericsMethods {
 
     //*************DropDown with Category related options*************
 
-    public void getValueFromDropdownWithCategory(String text){
+    public JQuerySelectDropdownPage getValueFromDropdownWithCategory(String text){
         selectDropDown(dropDownWithCategory,text);
+        return this;
     }
 
     public List<WebElement> getListOFDropdownWithCategory(){

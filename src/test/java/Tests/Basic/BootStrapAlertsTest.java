@@ -30,7 +30,7 @@ public class BootStrapAlertsTest extends BaseClass {
     public void validateNormalMassageAppear(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,6);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(6);
         BootStrapAlertsPage bootStrapAlertsPage = new BootStrapAlertsPage(driver);
 
         bootStrapAlertsPage.openNormalMessages();
@@ -44,7 +44,7 @@ public class BootStrapAlertsTest extends BaseClass {
     public void validateStyleOfNormalMassage(String text,String color,String backgroundColor) {
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,6);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(6);
         BootStrapAlertsPage bootStrapAlertsPage = new BootStrapAlertsPage(driver);
 
         bootStrapAlertsPage.openNormalMessages();
@@ -65,7 +65,7 @@ public class BootStrapAlertsTest extends BaseClass {
     public void validateCloseableAlerts() {
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,6);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(6);
         BootStrapAlertsPage bootStrapAlertsPage = new BootStrapAlertsPage(driver);
         GenericsMethods genericsMethods = new GenericsMethods(driver);
 

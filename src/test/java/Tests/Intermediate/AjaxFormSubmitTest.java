@@ -23,17 +23,15 @@ public class AjaxFormSubmitTest extends BaseClass {
     @Test
     public void ValidateAjaxFormSubmitWithoutInputAnyValue() throws InterruptedException {
 
-        String expectedText = "Form submited Successfully!";
+        final String EXPECTED_TEXT = "Form submited Successfully!";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseBasicExample(1);
         AjaxFormSubmitPage ajaxFormSubmitPage = new AjaxFormSubmitPage(driver);
 
-        ajaxFormSubmitPage.enterName("Mateusz");
-        ajaxFormSubmitPage.enterComment("Sowa");
-        ajaxFormSubmitPage.clickSubmit();
+        ajaxFormSubmitPage.enterName("Mateusz").enterComment("Sowa").clickSubmit();
 
-        Assert.assertEquals(ajaxFormSubmitPage.getMessage(),expectedText);
+        Assert.assertEquals(ajaxFormSubmitPage.getMessage(),EXPECTED_TEXT);
 
 
     }

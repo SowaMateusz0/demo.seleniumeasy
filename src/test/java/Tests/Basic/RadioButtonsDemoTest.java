@@ -22,29 +22,26 @@ public class RadioButtonsDemoTest extends BaseClass {
     @Test
     public void ValidateButtonTextAfterChoseFemaleRadioBox(){
 
-        String radioButtonValue  ="Radio button 'Female' is checked";
+        final String RADIO_BUTTON_VALUE  ="Radio button 'Female' is checked";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
-        radioButtonsDemoPage.clickFemaleButton();
-        radioButtonsDemoPage.getCheckedValueButton();
-        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),radioButtonValue);
+        radioButtonsDemoPage.clickFemaleButton().getCheckedValueButton();
+        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),RADIO_BUTTON_VALUE);
     }
 
     @Test
     public void ValidateButtonTextAfterChoseMaleRadioBox(){
 
         String radioButtonValue  ="Radio button 'Male' is checked";
-        ObjectMapper mapper = new ObjectMapper();
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
-        radioButtonsDemoPage.clickMaleButton();
-        radioButtonsDemoPage.getCheckedValueButton();
+        radioButtonsDemoPage.clickMaleButton().getCheckedValueButton();
         Assert.assertEquals(radioButtonsDemoPage.getTextValue(),radioButtonValue);
     }
 
@@ -54,7 +51,7 @@ public class RadioButtonsDemoTest extends BaseClass {
         String radioButtonValue  ="Radio button is Not checked";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
         radioButtonsDemoPage.getCheckedValueButton();
@@ -66,7 +63,7 @@ public class RadioButtonsDemoTest extends BaseClass {
 
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
         radioButtonsDemoPage.getGenderRadioButton(Integer.parseInt(genderIndex)).click();

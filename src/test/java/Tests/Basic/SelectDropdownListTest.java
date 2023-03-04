@@ -27,7 +27,7 @@ public class SelectDropdownListTest extends BaseClass {
     public void ValidateOutputTextAfterSelectDay(String day,String expected){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,3);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(3);
         SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage(driver);
 
         selectDropdownListPage.selectElementFromDropDownMenu(selectDropdownListPage.listOfAllDays(),day);
@@ -42,7 +42,7 @@ public class SelectDropdownListTest extends BaseClass {
         final int secondElementIndex = 4;
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,3);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(3);
         SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage(driver);
         Actions actions = new Actions(driver);
 

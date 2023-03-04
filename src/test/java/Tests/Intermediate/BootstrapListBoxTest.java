@@ -24,10 +24,10 @@ public class BootstrapListBoxTest extends BaseClass {
     }
 
     @Test(dataProvider = "getData")
-    public void ValidateMoveAllElementsFromBox1ToBox2(String element1,String element2,String element3,String element4,String element5,String element6,String element7,String element8,String element9,String element10) throws InterruptedException {
+    public void ValidateMoveAllElementsFromBox1ToBox2(String element1,String element2,String element3,String element4,String element5,String element6,String element7,String element8,String element9,String element10){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,3);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseBasicExample(3);
         BootstrapListBoxPage bootstrapListBoxPage = new BootstrapListBoxPage(driver);
 
         ArrayList<String> expectedElementsInList = new ArrayList<>();
@@ -42,9 +42,7 @@ public class BootstrapListBoxTest extends BaseClass {
         expectedElementsInList.add(element9);
         expectedElementsInList.add(element10);
 
-        bootstrapListBoxPage.clickSelectAllElementsFromLeftTableButton();
-        bootstrapListBoxPage.clickMoveElementsToRightBox();
-
+        bootstrapListBoxPage.clickSelectAllElementsFromLeftTableButton().clickMoveElementsToRightBox();
 
         ArrayList<String> actualElementsInRightBox = new ArrayList<>();
 
@@ -62,7 +60,7 @@ public class BootstrapListBoxTest extends BaseClass {
         final String inputValue = "Morbi";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,3);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseBasicExample(3);
         BootstrapListBoxPage bootstrapListBoxPage = new BootstrapListBoxPage(driver);
 
         ArrayList<String> expectedListOfSearchedValues = new ArrayList<>();

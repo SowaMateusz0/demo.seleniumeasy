@@ -57,15 +57,18 @@ public class RadioButtonsDemoPage extends GenericsMethods {
 
     //*************Radio Button Demo*************
 
-    public void clickMaleButton() {
+    public RadioButtonsDemoPage clickMaleButton() {
         maleRadioButton.click();
+        return this;
     }
 
-    public void clickFemaleButton() {
+    public RadioButtonsDemoPage clickFemaleButton() {
         femaleRadioButton.click();
+        return this;
     }
-    public void getCheckedValueButton() {
+    public RadioButtonsDemoPage getCheckedValueButton() {
         checkedValueButton.click();
+        return this;
     }
 
     public String getTextValue() {

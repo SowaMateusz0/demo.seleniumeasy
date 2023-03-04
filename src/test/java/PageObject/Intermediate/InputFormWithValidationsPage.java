@@ -127,52 +127,63 @@ public class InputFormWithValidationsPage extends GenericsMethods {
 
     //*************Fields*************
 
-    public void enterFirstName(String text){
+    public InputFormWithValidationsPage enterFirstName(String text){
         firstNameField.sendKeys(text);
+        return this;
     }
 
-    public void enterLastName(String text){
+    public InputFormWithValidationsPage enterLastName(String text){
         lastNameField.sendKeys(text);
+        return this;
     }
 
-    public void enterEmail(String text){
+    public InputFormWithValidationsPage enterEmail(String text){
         emailField.sendKeys(text);
+        return this;
     }
 
-    public void enterPhone(String text){
+    public InputFormWithValidationsPage enterPhone(String text){
         phoneField.sendKeys(text);
+        return this;
     }
 
-    public void enterAddress(String text){
+    public InputFormWithValidationsPage enterAddress(String text){
         addressField.sendKeys(text);
+        return this;
     }
 
-    public void enterCity(String text){
+    public InputFormWithValidationsPage enterCity(String text){
         cityField.sendKeys(text);
+        return this;
     }
 
-    public void chooseState(WebElement state, String stateName){
+    public InputFormWithValidationsPage chooseState(WebElement state, String stateName){
         selectDropDown(state, stateName);
+        return this;
     }
 
     public WebElement getState(){
         return state;
     }
 
-    public void enterZipCode(String text){
+    public InputFormWithValidationsPage enterZipCode(String text){
         zip.sendKeys(text);
+        return this;
     }
 
-    public void enterWebsite(String text){
+    public InputFormWithValidationsPage enterWebsite(String text){
         website.sendKeys(text);
+        return this;
     }
 
-    public void doYouWantHaveHostingRadioBox(int index){
+    public InputFormWithValidationsPage doYouWantHaveHostingRadioBox(int index){
         radioBox.get(index).click();
+        return this;
     }
 
-    public void enterComment(String text){
+    public InputFormWithValidationsPage enterComment(String text){
         comment.sendKeys(text);
+        return this;
     }
 
     //*************Text*************

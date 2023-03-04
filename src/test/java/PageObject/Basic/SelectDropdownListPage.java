@@ -61,8 +61,9 @@ public class SelectDropdownListPage extends GenericsMethods {
         return outputTextSingleDropDownList.getText();
     }
 
-    public void selectElementFromDropDownMenu(WebElement element,String visibleText){
+    public SelectDropdownListPage selectElementFromDropDownMenu(WebElement element,String visibleText){
         selectDropDown(element,visibleText);
+        return this;
     }
 
     public WebElement getGetAllSelectedButton() {

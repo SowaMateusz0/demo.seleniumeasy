@@ -26,7 +26,7 @@ public class CheckBoxDemoTest extends BaseClass {
         final String message = "Success - Check box is checked";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(1);
         CheckBoxDemoPage checkBoxDemoPage = new CheckBoxDemoPage(driver);
 
         checkBoxDemoPage.clickSingleCheckBox();
@@ -38,7 +38,7 @@ public class CheckBoxDemoTest extends BaseClass {
     public void isCheckboxSelected(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(1);
         CheckBoxDemoPage checkBoxDemoPage = new CheckBoxDemoPage(driver);
 
 
@@ -54,7 +54,7 @@ public class CheckBoxDemoTest extends BaseClass {
         final String messageWithAllCheckedCheckboxes = "Uncheck All";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(1);
         CheckBoxDemoPage checkBoxDemoPage = new CheckBoxDemoPage(driver);
 
         checkBoxDemoPage.clickCheckAllButton();
@@ -67,7 +67,7 @@ public class CheckBoxDemoTest extends BaseClass {
         final String messageWithOneUncheckedCheckboxes = "Check All";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(1);
         CheckBoxDemoPage checkBoxDemoPage = new CheckBoxDemoPage(driver);
         checkBoxDemoPage.clickOptionsCheckbox(1);
         Assert.assertEquals(checkBoxDemoPage.getCheckAllButton().getAttribute("value"),messageWithOneUncheckedCheckboxes);

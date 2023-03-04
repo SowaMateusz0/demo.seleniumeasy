@@ -42,20 +42,19 @@ public class AjaxFormSubmitPage extends GenericsMethods {
 
     //*************Ajax Form*************
 
-    public String getNameField() {
-        return nameField.getAttribute("style");
-    }
-
-    public void enterName(String text) {
+    public AjaxFormSubmitPage enterName(String text) {
         nameField.sendKeys(text);
+        return this;
     }
 
-    public void enterComment(String text) {
+    public AjaxFormSubmitPage enterComment(String text) {
         commentField.sendKeys(text);
+        return this;
     }
 
-    public void clickSubmit(){
+    public AjaxFormSubmitPage clickSubmit(){
         submitButton.click();
+        return this;
     }
 
     public String getMessage() {

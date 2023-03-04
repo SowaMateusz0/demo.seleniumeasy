@@ -46,20 +46,23 @@ public class BootstrapListBoxPage {
     private List<WebElement> listOfSearchedElements;
 
 
-    public void clickSelectAllElementsFromLeftTableButton(){
+    public BootstrapListBoxPage clickSelectAllElementsFromLeftTableButton(){
         selectAllElementsFromLeftTable.click();
+        return this;
     }
 
-    public void clickMoveElementsToRightBox(){
+    public BootstrapListBoxPage clickMoveElementsToRightBox(){
         moveElementToRightBox.click();
+        return this;
     }
 
     public List<WebElement> getSecondBoxWithElements(){
         return secondBoxWithElements;
     }
 
-    public void enterValueIntoSearchField(String text){
+    public BootstrapListBoxPage enterValueIntoSearchField(String text){
         searchField.sendKeys(text);
+        return this;
     }
 
     public List<WebElement> getListOfSearchedElements(){

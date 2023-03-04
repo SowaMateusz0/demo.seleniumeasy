@@ -47,12 +47,14 @@ public class SimpleFormDemoPage extends GenericsMethods {
 
 
     //*************Single Input Field*************
-    public void setEnterMessageBox(String text){
+    public SimpleFormDemoPage setEnterMessageBox(String text){
         enterMessageBox.sendKeys(text);
+        return this;
     }
 
-    public void clickShowMessageButton(){
+    public SimpleFormDemoPage clickShowMessageButton(){
         showMessageButton.click();
+        return this;
     }
 
     public String getMessage() {
@@ -61,16 +63,19 @@ public class SimpleFormDemoPage extends GenericsMethods {
 
     //*************Two Input Fields*************
 
-    public void enterFirstNumber(String num1){
+    public SimpleFormDemoPage enterFirstNumber(String num1){
         firstSumValue.sendKeys(num1);
+        return this;
     }
 
-    public void enterSecondNumber(String num2){
+    public SimpleFormDemoPage enterSecondNumber(String num2){
         secondSumValue.sendKeys(num2);
+        return this;
     }
 
-    public void clickGetTotalButton(){
+    public SimpleFormDemoPage clickGetTotalButton(){
         getTotal.click();
+        return this;
     }
 
     public String getValue() {

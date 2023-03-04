@@ -44,24 +44,27 @@ public class JavascriptAlertsPage extends GenericsMethods {
     @CacheLookup
     private WebElement messageAfterPromptBox;
 
-    public void clickAlertClickMeButton(){
+    public JavascriptAlertsPage clickAlertClickMeButton(){
         alertClickMeButton.click();
+        return this;
     }
 
     public String AlertText(WebDriver driver){
         return getAlertText(driver);
     }
 
-    public void clickConfirmClickMeButton(){
+    public JavascriptAlertsPage clickConfirmClickMeButton(){
         confirmClickMeButton.click();
+        return this;
     }
 
     public String getMessageAfterConfirmBox() {
         return messageAfterConfirmBox.getText();
     }
 
-    public void clickPromptBox(){
+    public JavascriptAlertsPage clickPromptBox(){
         clickForPromptBox.click();
+        return this;
     }
 
     public String getMessageAfterConfirmPromptBox() {

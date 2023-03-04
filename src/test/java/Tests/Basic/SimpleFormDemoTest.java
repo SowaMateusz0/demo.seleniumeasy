@@ -24,16 +24,15 @@ public class SimpleFormDemoTest extends BaseClass {
     @Test
     public void singleInputField() {
 
-        final String message = "Hello";
+        final String MESSAGE = "Hello";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(0);
         SimpleFormDemoPage simpleFormDemoPage = new SimpleFormDemoPage(driver);
 
-        simpleFormDemoPage.setEnterMessageBox(message);
-        simpleFormDemoPage.clickShowMessageButton();
+        simpleFormDemoPage.setEnterMessageBox(MESSAGE).clickShowMessageButton();
 
-        Assert.assertEquals(simpleFormDemoPage.getMessage(), message);
+        Assert.assertEquals(simpleFormDemoPage.getMessage(), MESSAGE);
     }
 
 
@@ -41,12 +40,11 @@ public class SimpleFormDemoTest extends BaseClass {
     public void twoInputFields(String number1, String number2, String sum){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC, 0);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(0);
         SimpleFormDemoPage simpleFormDemoPage = new SimpleFormDemoPage(driver);
 
-        simpleFormDemoPage.enterFirstNumber(number1);
-        simpleFormDemoPage.enterSecondNumber(number2);
-        simpleFormDemoPage.clickGetTotalButton();
+        simpleFormDemoPage.enterFirstNumber(number1).enterSecondNumber(number2).clickGetTotalButton();
+
         Assert.assertEquals(simpleFormDemoPage.getValue(), sum);
     }
 

@@ -28,7 +28,7 @@ public class WindowPopupModalTest extends BaseClass {
     public void validateWindowPopupTitle(String buttonText,String actualURL1,String actualURL2) {
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,5);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(5);
         WindowPopupModalPage windowPopupModalPage = new WindowPopupModalPage(driver);
 
         if(buttonText.equalsIgnoreCase("Follow on Twitter")){

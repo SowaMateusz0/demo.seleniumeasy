@@ -29,7 +29,7 @@ public class JQueryListBoxTest extends BaseClass {
             ,String element7,String element8,String element9,String element10,String element11,String element12,String element13,String element14,String element15){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,4 );
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(4);
         JQueryListBoxPage jQueryListBoxPage = new JQueryListBoxPage(driver);
 
         ArrayList<String> expectedElementsOnRightList = new ArrayList<>();
@@ -66,11 +66,10 @@ public class JQueryListBoxTest extends BaseClass {
         final String pickedElement = "Isis";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,4 );
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(4);
         JQueryListBoxPage jQueryListBoxPage = new JQueryListBoxPage(driver);
 
-        jQueryListBoxPage.getElementFormPickListData(pickedElement);
-        jQueryListBoxPage.clickAddButton();
+        jQueryListBoxPage.getElementFormPickListData(pickedElement).clickAddButton();
 
         ArrayList<String> expectedListOfElements = new ArrayList<>();
         expectedListOfElements.add(pickedElement);
@@ -88,12 +87,10 @@ public class JQueryListBoxTest extends BaseClass {
     public void ValidateRemoveAllButton(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,4 );
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(4);
         JQueryListBoxPage jQueryListBoxPage = new JQueryListBoxPage(driver);
 
-
-        jQueryListBoxPage.clickAddAllButton();
-        jQueryListBoxPage.clickRemoveAllButton();
+        jQueryListBoxPage.clickAddAllButton().clickRemoveAllButton();
 
         ArrayList<String> expectedElementsOnRightList = new ArrayList<>();
         ArrayList<String> actualElementsOnRightList = new ArrayList<>();
@@ -111,11 +108,10 @@ public class JQueryListBoxTest extends BaseClass {
         final String pickedElement = "Isis";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,4 );
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(4);
         JQueryListBoxPage jQueryListBoxPage = new JQueryListBoxPage(driver);
 
-        jQueryListBoxPage.getElementFormPickListData(pickedElement);
-        jQueryListBoxPage.clickAddButton();
+        jQueryListBoxPage.getElementFormPickListData(pickedElement).clickRemoveButton();
 
         ArrayList<String> expectedListOfElements = new ArrayList<>();
 

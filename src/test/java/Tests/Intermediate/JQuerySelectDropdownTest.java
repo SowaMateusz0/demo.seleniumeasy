@@ -29,7 +29,7 @@ public class JQuerySelectDropdownTest extends BaseClass {
         final String country = "Japan";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(2);
         JQuerySelectDropdownPage jQuerySelectDropdownPage = new JQuerySelectDropdownPage(driver);
 
         jQuerySelectDropdownPage.clickSelectCountryDropDown();
@@ -40,21 +40,20 @@ public class JQuerySelectDropdownTest extends BaseClass {
     }
 
     @Test
-    public void ValidateSelectMultipleValues() throws InterruptedException {
+    public void ValidateSelectMultipleValues(){
 
-        final String state1 = "Alabama";
-        final String state2 = "Alaska";
+        final String STATE_ONE = "Alabama";
+        final String STATE_TWO = "Alaska";
 
         ArrayList<String> expectedStates = new ArrayList<>();
         expectedStates.add("×Alabama");
         expectedStates.add("×Alaska");
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(2);
         JQuerySelectDropdownPage jQuerySelectDropdownPage = new JQuerySelectDropdownPage(driver);
 
-        jQuerySelectDropdownPage.selectElement(state1);
-        jQuerySelectDropdownPage.selectElement(state2);
+        jQuerySelectDropdownPage.selectElement(STATE_ONE).selectElement(STATE_TWO);
 
         ArrayList<String> actualStates = new ArrayList<>();
 
@@ -70,7 +69,7 @@ public class JQuerySelectDropdownTest extends BaseClass {
         final String expected = "Puerto Rico";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(2);
         JQuerySelectDropdownPage jQuerySelectDropdownPage = new JQuerySelectDropdownPage(driver);
 
         jQuerySelectDropdownPage.getValueFromDropdownWithDisabledValues(expected);
@@ -84,7 +83,7 @@ public class JQuerySelectDropdownTest extends BaseClass {
         final String expected = "Java";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE,2);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseIntermediateExample(2);
         JQuerySelectDropdownPage jQuerySelectDropdownPage = new JQuerySelectDropdownPage(driver);
 
         jQuerySelectDropdownPage.getValueFromDropdownWithCategory(expected);

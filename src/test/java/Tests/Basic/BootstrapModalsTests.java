@@ -24,11 +24,10 @@ public class BootstrapModalsTests extends BaseClass {
     public void validateSingleModalExample(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,7);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(7);
         BootstrapModalsPage bootstrapModalsPage = new BootstrapModalsPage(driver);
 
-        bootstrapModalsPage.clickLaunchSingleModal();
-        bootstrapModalsPage.clickSaveChangesSingleModal();
+        bootstrapModalsPage.clickLaunchSingleModal().clickSaveChangesSingleModal();
         Assert.assertFalse(bootstrapModalsPage.getSingleModalWindow().isDisplayed());
     }
 
@@ -36,12 +35,10 @@ public class BootstrapModalsTests extends BaseClass {
     public void validateMultiModalExample(){
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,7);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(7);
         BootstrapModalsPage bootstrapModalsPage = new BootstrapModalsPage(driver);
 
-        bootstrapModalsPage.clickLaunchMultiModal();
-        bootstrapModalsPage.clickLaunchMultiModalFirstModal();
-        bootstrapModalsPage.clickSaveChangesMultiSecondModal();
+        bootstrapModalsPage.clickLaunchMultiModal().clickLaunchMultiModalFirstModal().clickSaveChangesMultiSecondModal();
         Assert.assertFalse(bootstrapModalsPage.getMultiModalWindow().isDisplayed());
     }
 }

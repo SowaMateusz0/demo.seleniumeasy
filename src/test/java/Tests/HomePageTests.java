@@ -21,7 +21,7 @@ public class HomePageTests extends BaseClass {
         final String webSiteTitle = "Selenium Easy - Checkbox demo for automation using selenium";
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC,1);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(1);
         Assert.assertEquals(webSiteTitle,driver.getTitle());
     }
 

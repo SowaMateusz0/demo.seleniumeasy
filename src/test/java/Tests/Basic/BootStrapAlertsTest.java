@@ -44,7 +44,7 @@ public class BootStrapAlertsTest extends BaseClass {
     public void validateStyleOfNormalMassage(String text,String color,String backgroundColor) {
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(6);
+        homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseIntermediateExample(6);
         BootStrapAlertsPage bootStrapAlertsPage = new BootStrapAlertsPage(driver);
 
         bootStrapAlertsPage.openNormalMessages();

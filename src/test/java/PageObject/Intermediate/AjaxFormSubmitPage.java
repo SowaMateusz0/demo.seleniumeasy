@@ -1,18 +1,16 @@
 package PageObject.Intermediate;
 
-import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static Utility.waits.WaitForElement.*;
+import static Utility.WaitForElement.*;
 
 public class AjaxFormSubmitPage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public AjaxFormSubmitPage(WebDriver driver) {
         this.driver = driver;

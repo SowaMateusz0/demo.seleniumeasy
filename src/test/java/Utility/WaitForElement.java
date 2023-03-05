@@ -1,4 +1,4 @@
-package Utility.waits;
+package Utility;
 
 import Tests.BaseClass;
 import org.openqa.selenium.WebDriver;

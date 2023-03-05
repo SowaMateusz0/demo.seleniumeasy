@@ -6,13 +6,13 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
-import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+import static Utility.WaitForElement.waitUntilElementIsClickable;
+import static Utility.WaitForElement.waitUntilElementIsVisible;
 
 
 public class BootstrapModalsPage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public BootstrapModalsPage(WebDriver driver) {
         this.driver = driver;

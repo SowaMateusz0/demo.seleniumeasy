@@ -1,21 +1,19 @@
 package PageObject.Basic;
 
-import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static Utility.waits.WaitForElement.waitUntilElementIsClickable;
-import static Utility.waits.WaitForElement.waitUntilElementIsVisible;
+import static Utility.WaitForElement.waitUntilElementIsClickable;
+import static Utility.WaitForElement.waitUntilElementIsVisible;
 
-public class SimpleFormDemoPage extends GenericsMethods {
+public class SimpleFormDemoPage{
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public SimpleFormDemoPage(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }

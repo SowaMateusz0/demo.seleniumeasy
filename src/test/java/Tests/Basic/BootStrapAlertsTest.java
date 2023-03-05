@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import static Utility.WaitForElement.waitForInvisibilityOfElement;
+
 public class BootStrapAlertsTest extends BaseClass {
 
     WebDriver driver;
@@ -73,7 +75,7 @@ public class BootStrapAlertsTest extends BaseClass {
             buttonToOpenAutocloseableMessage.click();
             for (WebElement autocloseableMessage : bootStrapAlertsPage.getAutocloseableMessagesList()
             ) {
-                genericsMethods.waitForInvisibilityOfElement(driver,autocloseableMessage,10);
+                waitForInvisibilityOfElement(autocloseableMessage,driver);
                 Assert.assertFalse(autocloseableMessage.isDisplayed());
             }
         }

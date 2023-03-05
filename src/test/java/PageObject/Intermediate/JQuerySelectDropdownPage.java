@@ -1,6 +1,5 @@
 package PageObject.Intermediate;
 
-import Utility.GenericsMethods;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,14 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static Utility.waits.WaitForElement.*;
+import static Utility.GenericsMethods.selectDropDown;
+import static Utility.WaitForElement.*;
 
-public class JQuerySelectDropdownPage extends GenericsMethods {
+public class JQuerySelectDropdownPage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public JQuerySelectDropdownPage(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }

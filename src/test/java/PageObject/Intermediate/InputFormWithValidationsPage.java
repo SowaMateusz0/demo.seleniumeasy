@@ -1,6 +1,5 @@
 package PageObject.Intermediate;
 
-import Utility.GenericsMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -9,14 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static Utility.waits.WaitForElement.*;
+import static Utility.GenericsMethods.selectDropDown;
+import static Utility.WaitForElement.*;
 
-public class InputFormWithValidationsPage extends GenericsMethods {
+public class InputFormWithValidationsPage{
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public InputFormWithValidationsPage(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }

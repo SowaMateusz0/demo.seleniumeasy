@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static Utility.waits.WaitForElement.*;
+import static Utility.WaitForElement.*;
 
 public class BootStrapAlertsPage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public BootStrapAlertsPage(WebDriver driver) {
         this.driver = driver;

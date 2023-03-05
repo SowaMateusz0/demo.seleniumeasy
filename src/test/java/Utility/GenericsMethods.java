@@ -24,7 +24,7 @@ public class GenericsMethods {
     }
 
 
-    public void selectDropDown(WebElement dropDownMenu,String text){
+    public static void selectDropDown(WebElement dropDownMenu,String text){
         Select select = new Select(dropDownMenu);
         List<WebElement> options = select.getOptions();
 
@@ -40,7 +40,7 @@ public class GenericsMethods {
         }
     }
 
-    public String getAlertText(WebDriver driver){
+    public static String getAlertText(WebDriver driver){
        return driver.switchTo().alert().getText();
     }
 

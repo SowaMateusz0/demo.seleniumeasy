@@ -76,14 +76,14 @@ public class BaseClass {
         return driver;
     }
 
-
     @AfterMethod
     public void tearDown(){
         driver.quit();
     }
 
-
     public Object[][] testData(String path,int sheetIndex) throws IOException {
+
+        logger.info("Taking data form excel file");
 
         FileInputStream fis = new FileInputStream(path);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -104,15 +104,18 @@ public class BaseClass {
                 data[i][j] = formatter.formatCellValue(cell);
             }
         }
+        logger.info("Data taken successfully form excel file");
         return data;
     }
 
 
     public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+        logger.info("Taking screenshot");
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
         String destinationPath = "./screens/"+testCaseName+".png";
         FileUtils.copyFile(source, new File(destinationPath));
+        logger.info("Screenshot taken successfully");
         return destinationPath;
     }
 

@@ -3,7 +3,8 @@
 <suite name="Suite" parallel="tests" thread-count="2">
 
     <listeners>
-        <listener class-name="Tests.Listeners"/>
+        <listener class-name="Listeners.Listeners"/>
+        <listener class-name="Listeners.AnnotationTransformer"/>
     </listeners>
 
     <test name="Basic Tests">

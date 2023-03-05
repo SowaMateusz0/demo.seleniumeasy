@@ -1,5 +1,6 @@
-package Tests;
+package Listeners;
 
+import Tests.BaseClass;
 import Utility.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -19,7 +20,7 @@ public class Listeners extends BaseClass implements ITestListener {
     ExtentTest test;
     ThreadLocal<ExtentTest> threadLocal = new ThreadLocal<>();
     WebDriver driver;
-    private Logger logger = LogManager.getLogger(Listeners.class);
+    private final Logger logger = LogManager.getLogger(Listeners.class);
 
     @Override
     public void onTestStart(ITestResult iTestResult) {

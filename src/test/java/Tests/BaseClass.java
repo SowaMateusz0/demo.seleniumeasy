@@ -2,6 +2,8 @@ package Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -27,33 +29,44 @@ public class BaseClass {
 
     public WebDriver driver;
     public Properties properties;
+    private final Logger logger = LogManager.getRootLogger();
 
     @BeforeMethod
     public WebDriver setup() throws IOException {
 
+        String filePath = "\\config\\config.properties";
         properties = new Properties();
-        FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") +"\\config\\config.properties");
+        FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + filePath);
+
+        logger.info("Trying to load properties from file: " + filePath);
         properties.load(fileInputStream);
+        logger.info("Properties loaded from file: " + filePath);
 
         String browserName = properties.getProperty("browser");
 
         if(browserName.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
+            logger.info("ChromeDriver initialized");
             chromeOptions.setAcceptInsecureCerts(true);
             driver = new ChromeDriver(chromeOptions);
         }
         else if(browserName.equalsIgnoreCase("firefox")){
             WebDriverManager.chromedriver().setup();
             FirefoxOptions firefoxOptions = new FirefoxOptions();
+            logger.info("FirefoxDriver initialized");
             firefoxOptions.setAcceptInsecureCerts(true);
             driver = new FirefoxDriver(firefoxOptions);
         }
         else if(browserName.equalsIgnoreCase("ie")){
             WebDriverManager.chromedriver().setup();
+            logger.info("EdgeDriver initialized");
             EdgeOptions edgeOptions = new EdgeOptions();
             edgeOptions.setAcceptInsecureCerts(true);
             driver = new EdgeDriver(edgeOptions);
+        }
+        else {
+            logger.warn("Browser type not found");
         }
 
 

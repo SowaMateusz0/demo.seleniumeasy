@@ -13,7 +13,7 @@ public class JavascriptAlertsTest extends BaseClass {
     @Test
     public void validateJavaScriptAlertBoxText(){
 
-        final String alertText = "I am an alert box!";
+        final String ALTER_TEXT = "I am an alert box!";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
@@ -21,40 +21,41 @@ public class JavascriptAlertsTest extends BaseClass {
 
         javascriptAlertsPage.clickAlertClickMeButton();
         javascriptAlertsPage.AlertText(driver);
-        Assert.assertEquals(javascriptAlertsPage.AlertText(driver),alertText);
+        Assert.assertEquals(javascriptAlertsPage.AlertText(driver),ALTER_TEXT);
         driver.switchTo().alert().accept();
     }
 
     @Test
     public void javaScriptConfirmBoxAccept(){
 
-        final String textAfterAcceptAlert = "You pressed OK!";
+
+        final String TEXT_AFTER_ACCEPT_ALTER = "You pressed OK!";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlertsPage = new JavascriptAlertsPage(driver);
         javascriptAlertsPage.clickConfirmClickMeButton();
         driver.switchTo().alert().accept();
-        Assert.assertEquals(javascriptAlertsPage.getMessageAfterConfirmBox(),textAfterAcceptAlert);
+        Assert.assertEquals(javascriptAlertsPage.getMessageAfterConfirmBox(),TEXT_AFTER_ACCEPT_ALTER);
     }
 
     @Test
     public void javaScriptConfirmBoxDismiss(){
 
-        final String textAfterAcceptAlert = "You pressed Cancel!";
+        final String TEXT_AFTER_ACCEPT_ALTER = "You pressed Cancel!";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
         JavascriptAlertsPage javascriptAlertsPage = new JavascriptAlertsPage(driver);
         javascriptAlertsPage.clickConfirmClickMeButton();
         driver.switchTo().alert().dismiss();
-        Assert.assertEquals(javascriptAlertsPage.getMessageAfterConfirmBox(),textAfterAcceptAlert);
+        Assert.assertEquals(javascriptAlertsPage.getMessageAfterConfirmBox(),TEXT_AFTER_ACCEPT_ALTER);
     }
 
     @Test
     public void javaScriptAlertBoxEnterValue(){
 
-        final String outPutText= "You have entered 'Hello' !";
+        final String OUTPUT_TEXT= "You have entered 'Hello' !";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(4);
@@ -63,7 +64,7 @@ public class JavascriptAlertsTest extends BaseClass {
         javascriptAlerts.clickPromptBox();
         driver.switchTo().alert().sendKeys("Hello");
         driver.switchTo().alert().accept();
-        Assert.assertEquals(javascriptAlerts.getMessageAfterConfirmPromptBox(),outPutText);
+        Assert.assertEquals(javascriptAlerts.getMessageAfterConfirmPromptBox(),OUTPUT_TEXT);
     }
 
 }

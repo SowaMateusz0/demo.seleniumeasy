@@ -60,7 +60,7 @@ public class InputFormWithValidationsTest extends BaseClass {
         List<String> expectedTextColorAsHex = new ArrayList<>();
 
         final String greenSuccessColor = "#3c763d";
-        final String blackColor = "#333333";
+        final String BLACK_COLOR = "#333333";
 
         expectedTextColorAsHex.add(greenSuccessColor);
         expectedTextColorAsHex.add(greenSuccessColor);
@@ -70,8 +70,8 @@ public class InputFormWithValidationsTest extends BaseClass {
         expectedTextColorAsHex.add(greenSuccessColor);
         expectedTextColorAsHex.add(greenSuccessColor);
         expectedTextColorAsHex.add(greenSuccessColor);
-        expectedTextColorAsHex.add(blackColor);
-        expectedTextColorAsHex.add(blackColor);
+        expectedTextColorAsHex.add(BLACK_COLOR);
+        expectedTextColorAsHex.add(BLACK_COLOR);
         expectedTextColorAsHex.add(greenSuccessColor);
 
         Assert.assertEquals(textColorAsHex,expectedTextColorAsHex);

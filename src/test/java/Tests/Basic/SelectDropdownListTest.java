@@ -29,17 +29,17 @@ public class SelectDropdownListTest extends BaseClass {
     @Test
     public void ValidateOutputTextAfterSelectCities(){
 
-        final int firstElementIndex = 0;
-        final int secondElementIndex = 4;
+        final int FIRST_ELEMENT_INDEX = 0;
+        final int SECOND_ELEMENT_INDEX = 4;
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(3);
         SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage(driver);
         Actions actions = new Actions(driver);
 
-        actions.keyDown(Keys.CONTROL).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(firstElementIndex)).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(secondElementIndex)).build().perform();
+        actions.keyDown(Keys.CONTROL).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(FIRST_ELEMENT_INDEX)).click(selectDropdownListPage.getIndexOfElementFromMultiSelectList(SECOND_ELEMENT_INDEX)).build().perform();
         selectDropdownListPage.getGetAllSelectedButton().click();
-        Assert.assertEquals(selectDropdownListPage.getGetTextFromMultiSelect(),"Options selected are : "+ selectDropdownListPage.getIndexOfElementFromMultiSelectList(firstElementIndex).getText() +"," +selectDropdownListPage.getIndexOfElementFromMultiSelectList(secondElementIndex).getText());
+        Assert.assertEquals(selectDropdownListPage.getGetTextFromMultiSelect(),"Options selected are : "+ selectDropdownListPage.getIndexOfElementFromMultiSelectList(FIRST_ELEMENT_INDEX).getText() +","+selectDropdownListPage.getIndexOfElementFromMultiSelectList(SECOND_ELEMENT_INDEX).getText());
 
     }
 

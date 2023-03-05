@@ -60,14 +60,14 @@ public class WindowPopupModalTest extends BaseClass {
 
 
             driver.switchTo().window(ID1);
-            final String secondURLWebsite = driver.getCurrentUrl();
+            final String SECOND_URL_WEBSITE = driver.getCurrentUrl();
             driver.switchTo().window(ID2);
-            final String thirdURLWebsite = driver.getCurrentUrl();
+            final String THIRD_URL_WEBSITE = driver.getCurrentUrl();
 
             Set<String> websitesURL = new HashSet<>();
 
-            websitesURL.add(secondURLWebsite);
-            websitesURL.add(thirdURLWebsite);
+            websitesURL.add(SECOND_URL_WEBSITE);
+            websitesURL.add(THIRD_URL_WEBSITE);
 
             Assert.assertEquals(websitesURL,websitesURL1);
         }

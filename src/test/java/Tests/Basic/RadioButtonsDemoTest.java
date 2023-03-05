@@ -28,32 +28,31 @@ public class RadioButtonsDemoTest extends BaseClass {
     @Test
     public void ValidateButtonTextAfterChoseMaleRadioBox(){
 
-        String radioButtonValue  ="Radio button 'Male' is checked";
+        String RADIO_BUTTON_VALUE  ="Radio button 'Male' is checked";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
         radioButtonsDemoPage.clickMaleButton().getCheckedValueButton();
-        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),radioButtonValue);
+        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),RADIO_BUTTON_VALUE);
     }
 
     @Test
     public void ValidateButtonTextAWithoutCheckingAnyRadioButtons(){
 
-        String radioButtonValue  ="Radio button is Not checked";
+        String RADIO_BUTTON_VALUE  ="Radio button is Not checked";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);
         RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage(driver);
 
         radioButtonsDemoPage.getCheckedValueButton();
-        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),radioButtonValue);
+        Assert.assertEquals(radioButtonsDemoPage.getTextValue(),RADIO_BUTTON_VALUE);
     }
 
     @Test(dataProvider = "getDataRadioButtonsDemo")
     public void ValidateTextAfterCheckRadioButtons(String gender,String age,String genderIndex,String ageIndex){
-
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.BASIC).chooseBasicExample(2);

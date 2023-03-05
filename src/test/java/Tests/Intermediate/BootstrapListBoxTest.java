@@ -48,7 +48,7 @@ public class BootstrapListBoxTest extends BaseClass {
     @Test
     public void validateSearchField(){
 
-        final String inputValue = "Morbi";
+        final String INPUT_VALUE = "Morbi";
 
         HomePage homePage = new HomePage(driver);
         homePage.goToExercisesWebsite(DifficultyOfExercises.INTERMEDIATE).chooseBasicExample(3);
@@ -57,18 +57,14 @@ public class BootstrapListBoxTest extends BaseClass {
         ArrayList<String> expectedListOfSearchedValues = new ArrayList<>();
         expectedListOfSearchedValues.add("Morbi leo risus");
 
-        bootstrapListBoxPage.enterValueIntoSearchField(inputValue);
+        bootstrapListBoxPage.enterValueIntoSearchField(INPUT_VALUE);
 
         ArrayList<String> actualListOfSearchedValues = new ArrayList<>();
 
         for (WebElement element: bootstrapListBoxPage.getListOfSearchedElements()) {
             actualListOfSearchedValues.add(element.getText());
         }
-
         Assert.assertEquals(actualListOfSearchedValues, expectedListOfSearchedValues);
-
-
-
 
     }
 

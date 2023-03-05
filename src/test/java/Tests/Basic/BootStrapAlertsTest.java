@@ -5,11 +5,9 @@ import PageObject.Basic.HomePage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import Utility.GenericsMethods;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,13 +18,6 @@ import java.util.Set;
 import static Utility.WaitForElement.waitForInvisibilityOfElement;
 
 public class BootStrapAlertsTest extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test
     public void validateNormalMassageAppear(){

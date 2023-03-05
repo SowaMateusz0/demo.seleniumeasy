@@ -4,9 +4,7 @@ import PageObject.Basic.HomePage;
 import PageObject.Basic.WindowPopupModalPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -16,13 +14,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class WindowPopupModalTest extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test(dataProvider = "getDataSingle")
     public void validateWindowPopupTitle(String buttonText,String actualURL1,String actualURL2) {

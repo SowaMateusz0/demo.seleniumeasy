@@ -1,7 +1,5 @@
 package Tests;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -19,13 +17,10 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
 
 public class BaseClass {
@@ -33,7 +28,7 @@ public class BaseClass {
     public WebDriver driver;
     public Properties properties;
 
-
+    @BeforeMethod
     public WebDriver setup() throws IOException {
 
         properties = new Properties();
@@ -64,16 +59,15 @@ public class BaseClass {
 
         driver.get(properties.getProperty("url"));
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         return driver;
     }
 
 
-//    @AfterMethod
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
+    }
 
 
     public Object[][] testData(String path,int sheetIndex) throws IOException {

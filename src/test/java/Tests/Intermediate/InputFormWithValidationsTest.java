@@ -4,11 +4,9 @@ import PageObject.Basic.HomePage;
 import PageObject.Intermediate.InputFormWithValidationsPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -17,13 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InputFormWithValidationsTest extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test(dataProvider = "getInputSuccessData")
     public void ValidateAllSuccessInputCheckTextColor(String firstName,String lastName,String email,String phone,String address,String city,String state,String zipCode, String website,String comment){

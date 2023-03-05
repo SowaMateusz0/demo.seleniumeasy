@@ -4,20 +4,13 @@ import Utility.DifficultyOfExercises;
 import PageObject.Basic.HomePage;
 import PageObject.Basic.RadioButtonsDemoPage;
 import Tests.BaseClass;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class RadioButtonsDemoTest extends BaseClass {
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test
     public void ValidateButtonTextAfterChoseFemaleRadioBox(){

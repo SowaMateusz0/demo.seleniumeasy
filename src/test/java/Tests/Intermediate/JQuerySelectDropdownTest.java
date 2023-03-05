@@ -4,24 +4,14 @@ import PageObject.Basic.HomePage;
 import PageObject.Intermediate.JQuerySelectDropdownPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JQuerySelectDropdownTest extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test
     public void ValidateDropDownWithSearchBox(){

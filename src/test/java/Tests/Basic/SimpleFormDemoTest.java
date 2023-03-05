@@ -4,7 +4,6 @@ import Utility.DifficultyOfExercises;
 import PageObject.Basic.HomePage;
 import PageObject.Basic.SimpleFormDemoPage;
 import Tests.BaseClass;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -13,13 +12,6 @@ import java.io.IOException;
 
 
 public class SimpleFormDemoTest extends BaseClass {
-
-    public WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test
     public void singleInputField() {

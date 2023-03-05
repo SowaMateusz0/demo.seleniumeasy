@@ -5,23 +5,14 @@ import PageObject.Basic.SelectDropdownListPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class SelectDropdownListTest extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test(dataProvider = "getDataSelectDropdownSingleList")
     public void ValidateOutputTextAfterSelectDay(String day,String expected){

@@ -4,21 +4,11 @@ import PageObject.Basic.BootstrapModalsPage;
 import PageObject.Basic.HomePage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 
 public class BootstrapModalsTests extends BaseClass {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        driver = setup();
-    }
 
     @Test
     public void validateSingleModalExample(){

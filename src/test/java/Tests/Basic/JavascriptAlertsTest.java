@@ -4,22 +4,11 @@ import PageObject.Basic.HomePage;
 import PageObject.Basic.JavascriptAlertsPage;
 import Tests.BaseClass;
 import Utility.DifficultyOfExercises;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 
 public class JavascriptAlertsTest extends BaseClass {
-
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initialize() throws IOException {
-        this.driver = setup();
-    }
 
     @Test
     public void validateJavaScriptAlertBoxText(){
